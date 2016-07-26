@@ -7,10 +7,11 @@ import { config } from './utilities/config';
 import { serverConstant } from './utilities/constant';
 
 // import services
+import { CalendarService } from './services/calendar.service';
 
 
 // import controllers
-
+import { CalendarController } from './controllers/calendar.controller';
 
 
 
@@ -19,5 +20,7 @@ angular
   .module('app', ['ui.router'])
   .config(config)
   .constant('SERVER', serverConstant)
+  .service('CalendarService', CalendarService)
+  .controller('CalendarController', CalendarController)
 
 ;
