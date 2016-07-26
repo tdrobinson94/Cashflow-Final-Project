@@ -4,6 +4,12 @@ import 'angular-ui-router';
 
 // import config and constant
 import { config } from './utilities/config';
+import { serverConstant } from './utilities/constant';
+
+// import services
+
+
+// import controllers
 
 
 
@@ -12,5 +18,6 @@ import { config } from './utilities/config';
 angular
   .module('app', ['ui.router'])
   .config(config)
+  .constant('SERVER', serverConstant)
 
 ;
