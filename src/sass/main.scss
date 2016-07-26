@@ -12,7 +12,7 @@ body{
   position: relative;
   .navbar{
     width: 100%;
-    height: 30px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,34 +20,39 @@ body{
     top: 0px;
     left: 0px;
     z-index: 1;
-    background-color: white;
+    background-color: #69F0AE;
     a{
       text-decoration: none;
     }
   }
   .month{
     width: 100%;
-    height: 50px;
+    height: 100px;
     position: fixed;
-    top: 30px;
+    top: 50px;
     left: 0px;
     z-index: 1;
     background-color: #69F0AE;
     .select-form{
-      height: 25px;
+      height: 50px;
       display: flex;
       align-items: center;
       .selector{
-        height: 20px;
+        height: 45px;
+        width: 200px;
         margin-left: 5px;
         background-color: transparent;
         border: 1px solid #00B0FF;
         outline: none;
+        font-size: 30px;
+      }
+      .year-selector{
+        width: 100px;
       }
     }
     .day-of-week{
       width: 100%;
-      height: 25px;
+      height: 50px;
       display: flex;
       align-items: center;
       .week-day{
@@ -66,7 +71,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    top: 80px;
+    top: 150px;
     .days{
       width: 100%;
       height: 150px;
