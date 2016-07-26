@@ -20,10 +20,15 @@ body{
     top: 0px;
     left: 0px;
     z-index: 1;
-    background-color: #69F0AE;
+    background-color: #00E676;
     a{
       color: white;
       text-decoration: none;
+      transition: color .2s ease-in-out;
+    }
+    a:hover{
+      color: #00B0FF;
+      transition: color .2s ease-in-out;
     }
   }
   .month{
@@ -33,7 +38,7 @@ body{
     top: 50px;
     left: 0px;
     z-index: 1;
-    background-color: #69F0AE;
+    background-color: #00E676;
     .select-form{
       height: 50px;
       display: flex;
@@ -47,6 +52,12 @@ body{
         outline: none;
         font-size: 30px;
         color: white;
+        transition: all .2s ease-in-out;
+      }
+      .selector:hover{
+        color: #00B0FF;
+        background-color: #455A64;
+        transition: all .2s ease-in-out;
       }
       .year-selector{
         width: 100px;
@@ -60,9 +71,12 @@ body{
       .week-day{
         display: inline-block;
         width: 14.28%;
+        border-left: 1px solid #455A64;
+        border-right: 1px solid #455A64;
         span{
           font-size: 13px;
           padding-left: 5px;
+          color: #37474F;
         }
       }
     }
@@ -84,6 +98,7 @@ body{
         width: 14.28%;
         height: 100%;
         border: 1px solid #455A64;
+        background-color: #37474F;
         .num-container{
           float: right;
           border-radius: 100%;
@@ -98,6 +113,7 @@ body{
           .num{
             font-size: 12px;
             border-radius: 100%;
+            color: white;
           }
         }
       }

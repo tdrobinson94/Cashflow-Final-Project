@@ -128,6 +128,10 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderMonth();
 })
 
+// $(window).load(function(){
+//
+// })
+
 }
 
 CalendarController.$inject = ['$scope'];
