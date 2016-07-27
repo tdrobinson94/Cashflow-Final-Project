@@ -29,7 +29,7 @@ body{
     top: 0px;
     left: 0px;
     z-index: 1;
-    background-color: #00E676;
+    background-color: #37474F;
     a{
       color: white;
       text-decoration: none;
@@ -44,12 +44,12 @@ body{
       padding: 5px 10px;
       a{
         margin: 0px;
-        transition: color .2s ease-in-out;
+        transition: all .2s ease-in-out;
       }
-      a:hover{
-        color: #00E676;
-        transition: color .2s ease-in-out;
-      }
+    }
+    .navbar-button:hover{
+      background-color: #00E676;
+      transition: all .2s ease-in-out;
     }
     a:hover{
       color: #00B0FF;
@@ -85,6 +85,11 @@ body{
         border: none;
         outline: none;
         border-radius: 30px;
+        transition: all .2s ease-in-out;
+      }
+      .sign-up:hover{
+        background-color: #00B0FF;
+        transition: all .2s ease-in-out;
       }
     }
   }
@@ -170,7 +175,7 @@ body{
           justify-content: center;
           align-items: center;
           color: #00E676;
-          font-size: 30px;
+          font-size: 25px;
           background-color: transparent;
           border: none;
           outline: none;
@@ -189,7 +194,7 @@ body{
           align-items: center;
           visibility: hidden;
           color: #F44336;
-          font-size: 30px;
+          font-size: 25px;
           background-color: transparent;
           border: none;
           outline: none;
@@ -256,7 +261,7 @@ body{
       top: 0px;
       left: 0px;
       z-index: 1;
-      background-color: #00E676;
+      background-color: #37474F;
       a{
         color: white;
         text-decoration: none;
@@ -295,6 +300,7 @@ body{
           border: none;
           outline: none;
           border-radius: 30px;
+          transition: all .2s ease-in-out;
         }
       }
     }
@@ -464,7 +470,7 @@ body{
       top: 0px;
       left: 0px;
       z-index: 1;
-      background-color: #00E676;
+      background-color: #37474F;
       a{
         color: white;
         text-decoration: none;
@@ -674,12 +680,27 @@ body{
       top: 0px;
       left: 0px;
       z-index: 1;
-      background-color: #00E676;
+      background-color: #37474F;
       a{
         color: white;
         text-decoration: none;
         font-size: 13px;
         transition: color .2s ease-in-out;
+      }
+      .navbar-button{
+        background-color: #00B0FF;
+        border: none;
+        border-radius: 25px;
+        margin: 30px;
+        padding: 0px 5px;
+        a{
+          margin: 0px;
+          transition: color .2s ease-in-out;
+        }
+        a:hover{
+          color: #00E676;
+          transition: color .2s ease-in-out;
+        }
       }
       a:hover{
         color: #00B0FF;
