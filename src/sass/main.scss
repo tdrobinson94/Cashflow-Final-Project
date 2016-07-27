@@ -34,7 +34,8 @@ body{
       color: white;
       text-decoration: none;
       transition: color .2s ease-in-out;
-      margin: 30px;
+      margin: 15px;
+      font-size: 13px;
     }
     .navbar-button{
       background-color: #00B0FF;
@@ -266,6 +267,19 @@ body{
         color: white;
         text-decoration: none;
         transition: color .2s ease-in-out;
+        margin: 5px;
+        font-size: 11px;
+      }
+      .navbar-button{
+        background-color: #00B0FF;
+        border: none;
+        border-radius: 25px;
+        margin: 5px;
+        padding: 3px 8px;
+        a{
+          margin: 0px;
+          transition: all .2s ease-in-out;
+        }
       }
       a:hover{
         color: #00B0FF;
@@ -474,8 +488,20 @@ body{
       a{
         color: white;
         text-decoration: none;
-        font-size: 13px;
+        margin: 2px;
+        font-size: 11px;
         transition: color .2s ease-in-out;
+      }
+      .navbar-button{
+        background-color: #00B0FF;
+        border: none;
+        border-radius: 25px;
+        margin: 2px;
+        padding: 3px 8px;
+        a{
+          margin: 0px;
+          transition: all .2s ease-in-out;
+        }
       }
       a:hover{
         color: #00B0FF;
@@ -684,7 +710,7 @@ body{
       a{
         color: white;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 11px;
         transition: color .2s ease-in-out;
       }
       .navbar-button{
