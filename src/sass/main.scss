@@ -38,19 +38,30 @@ body{
   .home-page{
     width: 100%;
     height: 100%;
+    position: relative;
+    top: 50px;
     .background-image{
       width: 100%;
-      height: 425px;
-      opacity: .8;
+      height: 100%;
       z-index: -1;
-      position: relative;
-      top: 50px;
     }
     .slogan{
-      .sign-up-background{
-        .sign-up{
-
-        }
+      height: 50%;
+      width: 100%;
+      position: absolute;
+      top: 35%;
+      left: 0px;
+      text-align: center;
+      color: white;
+      font-size: 31px;
+      .sign-up{
+        background-color: #00E676;
+        font-size: 15px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
       }
     }
   }
@@ -237,13 +248,31 @@ body{
     .home-page{
       width: 100%;
       height: 100%;
+      position: relative;
+      top: 40px;
       .background-image{
         width: 100%;
         height: 75%;
-        opacity: .5;
         z-index: -1;
-        position: relative;
-        top: 40px;
+      }
+      .slogan{
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 35%;
+        left: 0px;
+        text-align: center;
+        color: white;
+        font-size: 23px;
+        .sign-up{
+          background-color: #00E676;
+          font-size: 15px;
+          color: white;
+          padding: 5px 15px;
+          border: none;
+          outline: none;
+          border-radius: 30px;
+        }
       }
     }
 
@@ -428,13 +457,31 @@ body{
     .home-page{
       width: 100%;
       height: 100%;
+      position: relative;
+      top: 30px;
       .background-image{
         width: 100%;
         height: 75%;
-        opacity: .5;
         z-index: -1;
-        position: relative;
-        top: 30px;
+      }
+      .slogan{
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 35%;
+        left: 0px;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        .sign-up{
+          background-color: #00E676;
+          font-size: 13px;
+          color: white;
+          padding: 5px 15px;
+          border: none;
+          outline: none;
+          border-radius: 30px;
+        }
       }
     }
 
@@ -620,14 +667,32 @@ body{
     .home-page{
       width: 100%;
       height: 100%;
+      top: 30px;
+      position: relative;
       .background-image{
         width: 100%;
         height: 75%;
-        opacity: .5;
         z-index: -1;
-        position: relative;
-        top: 30px;
       }
+      // .slogan{
+      //   height: 50%;
+      //   width: 100%;
+      //   position: absolute;
+      //   top: 35%;
+      //   left: 0px;
+      //   text-align: center;
+      //   color: white;
+      //   font-size: 35px;
+      //   .sign-up{
+      //     background-color: #00E676;
+      //     font-size: 15px;
+      //     color: white;
+      //     padding: 10px 20px;
+      //     border: none;
+      //     outline: none;
+      //     border-radius: 30px;
+      //   }
+      // }
     }
 
 
