@@ -674,25 +674,25 @@ body{
         height: 75%;
         z-index: -1;
       }
-      // .slogan{
-      //   height: 50%;
-      //   width: 100%;
-      //   position: absolute;
-      //   top: 35%;
-      //   left: 0px;
-      //   text-align: center;
-      //   color: white;
-      //   font-size: 35px;
-      //   .sign-up{
-      //     background-color: #00E676;
-      //     font-size: 15px;
-      //     color: white;
-      //     padding: 10px 20px;
-      //     border: none;
-      //     outline: none;
-      //     border-radius: 30px;
-      //   }
-      // }
+      .slogan{
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        left: 0px;
+        text-align: center;
+        color: white;
+        // font-size: 35px;
+        .sign-up{
+          background-color: #00E676;
+          font-size: 15px;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          outline: none;
+          border-radius: 30px;
+        }
+      }
     }
 
 
