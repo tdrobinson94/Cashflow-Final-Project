@@ -12,6 +12,7 @@ import { CalendarService } from './services/calendar.service';
 
 // import controllers
 import { CalendarController } from './controllers/calendar.controller';
+import { HomeController } from './controllers/home.controller';
 
 
 
@@ -22,5 +23,6 @@ angular
   .constant('SERVER', serverConstant)
   .service('CalendarService', CalendarService)
   .controller('CalendarController', CalendarController)
+  .controller('HomeController', HomeController)
 
 ;
