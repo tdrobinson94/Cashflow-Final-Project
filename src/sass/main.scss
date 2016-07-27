@@ -99,6 +99,45 @@ body{
         height: 100%;
         border: 1px solid #455A64;
         background-color: #37474F;
+        position: relative;
+        .plus-button{
+          visibility: hidden;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #00E676;
+          font-size: 30px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          transition: opacity .2s ease-in-out;
+        }
+        .plus-button:hover{
+          opacity: .5;
+          transition: all .2s ease-in-out;
+        }
+        .minus-button{
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          visibility: hidden;
+          color: #F44336;
+          font-size: 30px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          transition: opacity .2s ease-in-out;
+        }
+        .minus-button:hover{
+          opacity: .5;
+          transition: all .2s ease-in-out;
+        }
         .num-container{
           float: right;
           border-radius: 100%;
@@ -119,6 +158,12 @@ body{
       }
       #num-box:hover{
         background-color: #00B0FF;
+        .plus-button{
+          visibility: visible;
+        }
+        .minus-button{
+          visibility: visible;
+        }
       }
     }
   }
