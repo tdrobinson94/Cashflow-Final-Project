@@ -40,11 +40,18 @@ body{
     height: 100%;
     .background-image{
       width: 100%;
-      height: 100%;
-      opacity: .5;
+      height: 425px;
+      opacity: .8;
       z-index: -1;
       position: relative;
       top: 50px;
+    }
+    .slogan{
+      .sign-up-background{
+        .sign-up{
+
+        }
+      }
     }
   }
 
@@ -209,7 +216,7 @@ body{
       width: 100%;
       height: 40px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       position: fixed;
       top: 0px;
@@ -226,6 +233,21 @@ body{
         transition: color .2s ease-in-out;
       }
     }
+
+    .home-page{
+      width: 100%;
+      height: 100%;
+      .background-image{
+        width: 100%;
+        height: 75%;
+        opacity: .5;
+        z-index: -1;
+        position: relative;
+        top: 40px;
+      }
+    }
+
+
     .month{
       width: 100%;
       height: 85px;
@@ -384,7 +406,7 @@ body{
       width: 100%;
       height: 30px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       position: fixed;
       top: 0px;
@@ -402,6 +424,22 @@ body{
         transition: color .2s ease-in-out;
       }
     }
+
+    .home-page{
+      width: 100%;
+      height: 100%;
+      .background-image{
+        width: 100%;
+        height: 75%;
+        opacity: .5;
+        z-index: -1;
+        position: relative;
+        top: 30px;
+      }
+    }
+
+
+
     .month{
       width: 100%;
       height: 75px;
@@ -560,7 +598,7 @@ body{
       width: 100%;
       height: 30px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
       position: fixed;
       top: 0px;
@@ -578,6 +616,22 @@ body{
         transition: color .2s ease-in-out;
       }
     }
+
+    .home-page{
+      width: 100%;
+      height: 100%;
+      .background-image{
+        width: 100%;
+        height: 75%;
+        opacity: .5;
+        z-index: -1;
+        position: relative;
+        top: 30px;
+      }
+    }
+
+
+
     .month{
       width: 100%;
       height: 75px;
