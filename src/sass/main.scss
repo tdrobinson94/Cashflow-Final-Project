@@ -1,3 +1,11 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
 html{
   height: 100%;
   width: 100%;
@@ -27,6 +35,21 @@ body{
       text-decoration: none;
       transition: color .2s ease-in-out;
       margin: 30px;
+    }
+    .navbar-button{
+      background-color: #00B0FF;
+      border: none;
+      border-radius: 25px;
+      margin: 30px;
+      padding: 5px 10px;
+      a{
+        margin: 0px;
+        transition: color .2s ease-in-out;
+      }
+      a:hover{
+        color: #00E676;
+        transition: color .2s ease-in-out;
+      }
     }
     a:hover{
       color: #00B0FF;
