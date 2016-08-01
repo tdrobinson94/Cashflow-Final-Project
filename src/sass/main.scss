@@ -238,7 +238,7 @@ body{
     }
   }
   .day_background_color{
-    background-color: #00E676;
+    border: 2px solid #00E676;
     color: white;
   }
   .fixed_day_position{
@@ -376,6 +376,15 @@ body{
             }
           }
         }
+        #num-box:hover{
+          background-color: #00B0FF;
+          .plus-button{
+            visibility: hidden;
+          }
+          .minus-button{
+            visibility: hidden;
+          }
+        }
       }
     }
   }
@@ -446,6 +455,15 @@ body{
             .num{
               font-size: 10px;
             }
+          }
+        }
+        #num-box:hover{
+          background-color: #00B0FF;
+          .plus-button{
+            visibility: hidden;
+          }
+          .minus-button{
+            visibility: hidden;
           }
         }
       }

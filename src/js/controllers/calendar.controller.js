@@ -75,20 +75,20 @@ let renderCurrentMonth = function () {
 };
 renderCurrentMonth();
 
-
 $('.month-selector').append(`
-  <option value="${month - 6}">${MONTHS[month - 6].name}</option>
-  <option value="${month - 5}">${MONTHS[month - 5].name}</option>
-  <option value="${month - 4}">${MONTHS[month - 4].name}</option>
-  <option value="${month - 3}">${MONTHS[month - 3].name}</option>
-  <option value="${month - 2}">${MONTHS[month - 2].name}</option>
-  <option value="${month - 1}">${MONTHS[month - 1].name}</option>
   <option value="${month}" selected>${MONTHS[month].name}</option>
-  <option value="${month + 1}">${MONTHS[month + 1].name}</option>
-  <option value="${month + 2}">${MONTHS[month + 2].name}</option>
-  <option value="${month + 3}">${MONTHS[month + 3].name}</option>
-  <option value="${month + 4}">${MONTHS[month + 4].name}</option>
-  <option value="${month + 5}">${MONTHS[month + 5].name}</option>
+  <option value="0">${MONTHS[0].name}</option>
+  <option value="1">${MONTHS[1].name}</option>
+  <option value="2">${MONTHS[2].name}</option>
+  <option value="3">${MONTHS[3].name}</option>
+  <option value="4">${MONTHS[4].name}</option>
+  <option value="5">${MONTHS[5].name}</option>
+  <option value="6">${MONTHS[6].name}</option>
+  <option value="7">${MONTHS[7].name}</option>
+  <option value="8">${MONTHS[8].name}</option>
+  <option value="9">${MONTHS[9].name}</option>
+  <option value="10">${MONTHS[10].name}</option>
+  <option value="11">${MONTHS[11].name}</option>
   `)
 
   $('.year-selector').append(`
@@ -107,7 +107,6 @@ $('.month-selector').append(`
 
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
-
   let renderMonth = function () {
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28
     let startOfMonth = new Date($('#year').val(), $('#month').val(), 1).getDay();
