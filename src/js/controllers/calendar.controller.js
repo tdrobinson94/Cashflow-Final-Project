@@ -106,7 +106,6 @@ $('.month-selector').append(`
     <option value="${year + 5}">${year + 5}</option>
     `)
 
-// console.log($('.num-container').children());
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
   let renderMonth = function () {
@@ -120,15 +119,14 @@ $('.month-selector, .year-selector').on('change', function(event){
       day.find('.num').html(dayIndex);
       if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
        day.find('.num').parent().addClass("day_background_color");
-     } else if (day.find('num').text() == ""){
-       day.find('.num').parent().removeClass('day_background_color');
      } else {
-       day.find('.num').parent().removeClass('day_background_color');
+       day.find('.num').parent().removeClass("day_background_color");
      }
     })
   };
 
   renderMonth();
+
 })
 
 }

@@ -170,6 +170,7 @@ body{
         border: 1px solid #455A64;
         background-color: #37474F;
         position: relative;
+        transition: all .2s ease-in-out;
         .plus-button{
           visibility: hidden;
           position: absolute;
@@ -227,7 +228,8 @@ body{
         }
       }
       #num-box:hover{
-        background-color: #00B0FF;
+        opacity: .8;
+        transition: all .2s ease-in-out;
         .plus-button{
           visibility: visible;
         }
@@ -377,7 +379,6 @@ body{
           }
         }
         #num-box:hover{
-          background-color: #00B0FF;
           .plus-button{
             visibility: hidden;
           }
@@ -398,7 +399,7 @@ body{
         font-size: 11px;
       }
       .navbar-button{
-        margin: 30px;
+        margin: 2px;
         padding: 0px 5px;
       }
     }
@@ -458,7 +459,6 @@ body{
           }
         }
         #num-box:hover{
-          background-color: #00B0FF;
           .plus-button{
             visibility: hidden;
           }
