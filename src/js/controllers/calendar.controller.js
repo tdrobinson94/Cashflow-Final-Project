@@ -64,16 +64,37 @@ let renderCurrentMonth = function () {
   let startOfMonth = new Date(year, month, 1).getDay();
   let monthDays = MONTHS[month].days;
   let days = $(".days").children();
-  _.range(1, monthDays + 1).forEach(function(dayIndex) {
+  _.range(1, 42).forEach(function(dayIndex, i) {
     let day = $(days[startOfMonth + dayIndex - 1]);
-    day.find('.num').html(dayIndex);
-    if (clock.getDate() === dayIndex) {
-      day.find('.num').parent().addClass("day_background_color");
-    } else{
-      day.find('.num').parent().removeClass('day_background_color');
+    // console.log(`days ${i} is:`, day);
+    if(dayIndex > monthDays){
+      day.find('.num').html(dayIndex - monthDays);
+    } else {
+      day.find('.num').html(dayIndex);
     }
+    // if (clock.getDate() === dayIndex) {
+    //   day.find('.num').parent().addClass("day_background_color");
+    // } else{
+    //   day.find('.num').parent().removeClass('day_background_color');
+    // }
   })
 };
+
+function renderLastMonth(){
+  MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28
+  let startOfMonth = new Date($('#year').val(), $('#month').val(), 1).getDay();
+  let monthDays = MONTHS[$('#month').val()].days;
+  let prevMonthDays = MONTHS[$('#month').val() - 1].days;
+  let days = $(".days").children();
+  let prevDays = _.range(1, prevMonthDays + 1).slice(-startOfMonth);
+  _.range(0, startOfMonth).forEach(function(dayIndex){
+    let day = $(days[dayIndex]);
+    if (startOfMonth > dayIndex){
+      day.find('.num').html(prevDays[dayIndex]);
+    };
+  });
+};
+
 renderCurrentMonth();
 
 $('.month-selector').append(`
@@ -114,18 +135,38 @@ $('.month-selector, .year-selector').on('change', function(event){
     let monthDays = MONTHS[$('#month').val()].days;
     let days = $(".days").children();
     $('.num').empty();
-    _.range(1, monthDays + 1).forEach(function(dayIndex) {
+    _.range(1, 43).forEach(function(dayIndex, i) {
       let day = $(days[startOfMonth + dayIndex - 1]);
-      day.find('.num').html(dayIndex);
-      if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
-       day.find('.num').parent().addClass("day_background_color");
-     } else {
-       day.find('.num').parent().removeClass("day_background_color");
-     }
+      if(dayIndex > monthDays){
+        day.find('.num').html(dayIndex - monthDays);
+      } else {
+        day.find('.num').html(dayIndex);
+      }
+    //   if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
+    //    day.find('.num').parent().addClass("day_background_color");
+    //  } else {
+    //    day.find('.num').parent().removeClass("day_background_color");
+    //  }
     })
   };
 
+  function renderPrevMonth(){
+    MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28
+    let startOfMonth = new Date($('#year').val(), $('#month').val(), 1).getDay();
+    let monthDays = MONTHS[$('#month').val()].days;
+    let prevMonthDays = MONTHS[$('#month').val() - 1].days;
+    let days = $(".days").children();
+    let prevDays = _.range(1, prevMonthDays + 1).slice(-startOfMonth);
+    _.range(0, startOfMonth).forEach(function(dayIndex){
+      let day = $(days[dayIndex]);
+      if (startOfMonth > dayIndex){
+        day.find('.num').html(prevDays[dayIndex]);
+      }
+    })
+  }
+
   renderMonth();
+  renderPrevMonth();
 
 })
 
