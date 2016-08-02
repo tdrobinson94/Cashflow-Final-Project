@@ -303,6 +303,14 @@ body{
             font-size: 30px;
           }
         }
+        #num-box:hover{
+          .plus-button{
+            visibility: hidden;
+          }
+          .minus-button{
+            visibility: hidden;
+          }
+        }
       }
     }
   }
@@ -360,8 +368,9 @@ body{
     }
     .calendar-container{
       top: 105px;
+      height: 600px;
       .days{
-        height: 16.66%;
+        height: 100px;
         .num-box{
           .plus-button{
             font-size: 30px;
@@ -440,8 +449,9 @@ body{
     }
     .calendar-container{
       top: 105px;
+      height: 600px;
       .days{
-        height: 16.66%;
+        height: 100px;
         .num-box{
           .plus-button{
             font-size: 30px;
