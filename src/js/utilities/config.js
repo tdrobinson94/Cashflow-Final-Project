@@ -19,6 +19,12 @@ function config($stateProvider, $urlRouterProvider){
     controller: 'CalendarController as vm'
   })
 
+  .state('root.sign-up', {
+    url: '/sign-up',
+    templateUrl: 'templates/sign-up.tpl.html',
+    controller: 'SignUpController as vm'
+  })
+
   $urlRouterProvider.otherwise('/home');
 
 

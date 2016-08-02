@@ -35,24 +35,21 @@ body{
       transition: color .2s ease-in-out;
       margin: 15px;
       font-size: 13px;
-    }
-    .navbar-button{
-      background-color: #00B0FF;
-      border: none;
-      border-radius: 25px;
-      margin: 30px;
-      padding: 5px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      a{
-        margin: 0px;
+      .navbar-button{
+        background-color: #00B0FF;
+        border: none;
+        border-radius: 25px;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        outline: none;
+      }
+      .navbar-button:hover{
+        background-color: #00E676;
         transition: all .2s ease-in-out;
       }
-    }
-    .navbar-button:hover{
-      background-color: #00E676;
-      transition: all .2s ease-in-out;
     }
     a:hover{
       color: #00B0FF;
@@ -75,11 +72,11 @@ body{
       height: 50%;
       width: 100%;
       position: absolute;
-      top: 35%;
+      top: 25%;
       left: 0px;
       text-align: center;
       color: white;
-      font-size: 31px;
+      font-size: 29px;
       font-weight: bold;
       .sign-up{
         background-color: #00E676;
@@ -90,6 +87,32 @@ body{
         outline: none;
         border-radius: 30px;
         transition: all .2s ease-in-out;
+        font-weight: normal;
+      }
+      .input{
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-weight: normal;
+        opacity: .5;
+      }
+      .log-in{
+        font-size: 14px;
+        border: none;
+        border-radius: 30px;
+        padding: 5px 10px;
+        font-weight: normal;
+        transition: opacity .2s ease-in-out;
+        outline: none;
+      }
+      .log-in:hover{
+        opacity: .8;
+        transition: opacity .2s ease-in-out;
+      }
+      span{
+        font-size: 16px;
+        font-weight: normal;
       }
       .sign-up:hover{
         background-color: #00B0FF;
@@ -98,7 +121,12 @@ body{
     }
   }
 
-
+  .sign-up_container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 50px;
+  }
 
 
   .month{
@@ -223,7 +251,7 @@ body{
           .num{
             font-size: 12px;
             border-radius: 100%;
-            color: white;
+            color: darkgray;
           }
         }
       }
@@ -243,9 +271,8 @@ body{
     border: 1px solid #00E676;
     color: white;
   }
-  .fixed_day_position{
-    position: fixed;
-    top: 0px;
+  .current_month_color{
+    color: white;
   }
 
 
@@ -269,9 +296,13 @@ body{
     .home-page{
       top: 40px;
       .slogan{
-        font-size: 23px;
+        font-size: 21px;
         .sign-up{
           padding: 5px 15px;
+        }
+        .input{
+          margin: 2px;
+          font-size: 14px;
         }
       }
     }
@@ -337,6 +368,17 @@ body{
         .sign-up{
           font-size: 13px;
           padding: 5px 15px;
+        }
+        .input{
+          font-size: 13px;
+          padding: 3px 7px;
+        }
+        .log-in{
+          font-size: 12px;
+          padding: 3px 7px;
+        }
+        span{
+          font-size: 14px;
         }
       }
     }
