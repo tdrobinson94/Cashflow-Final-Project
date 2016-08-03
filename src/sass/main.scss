@@ -143,7 +143,7 @@ body{
     .add_input{
       margin: 15px;
       padding: 10px;
-      width: 55%;
+      width: 65%;
       border-radius: 3px;
       border: 1px solid lightgray;
     }
@@ -328,11 +328,14 @@ body{
         .sign-up{
           padding: 5px 15px;
         }
-        .input{
-          margin: 2px;
-          font-size: 14px;
-        }
       }
+    }
+
+    .title-background{
+      top: 40px;
+    }
+    .addAccountForm{
+      top: 120px;
     }
 
 
@@ -397,10 +400,6 @@ body{
           font-size: 13px;
           padding: 5px 15px;
         }
-        .input{
-          font-size: 13px;
-          padding: 3px 7px;
-        }
         .log-in{
           font-size: 12px;
           padding: 3px 7px;
@@ -409,6 +408,13 @@ body{
           font-size: 14px;
         }
       }
+    }
+
+    .title-background{
+      top: 30px;
+    }
+    .addAccountForm{
+      top: 110px;
     }
 
 
@@ -490,6 +496,12 @@ body{
         left: 0px;
         text-align: center;
       }
+    }
+    .title-background{
+      top: 30px;
+    }
+    .addAccountForm{
+      top: 100px;
     }
 
 
