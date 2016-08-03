@@ -25,6 +25,12 @@ function config($stateProvider, $urlRouterProvider){
     controller: 'SignUpController as vm'
   })
 
+  .state('root.login-in', {
+    url:'/log-in',
+    templateUrl: 'templates/log-in.tpl.html',
+    controller: 'Log-inController as vm'
+  })
+
   $urlRouterProvider.otherwise('/home');
 
 

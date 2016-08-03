@@ -106,11 +106,12 @@ body{
         font-weight: normal;
         transition: opacity .2s ease-in-out;
         outline: none;
-        background-color: lightgray;
-        color: black;
+        background-color: black;
+        color: white;
+        opacity: .8;
       }
       .log-in:hover{
-        opacity: .8;
+        opacity: .6;
         transition: opacity .2s ease-in-out;
       }
       span{
@@ -133,6 +134,9 @@ body{
     position: fixed;
     top: 50px;
     z-index: 1;
+    .title{
+      color: white;
+    }
   }
   .addAccountForm{
     position: absolute;
@@ -155,6 +159,33 @@ body{
       color: white;
     }
   }
+  .loginForm{
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    div{
+      margin-bottom: 50px;
+    }
+    .login_input{
+      margin: 15px;
+      padding: 10px;
+      width: 65%;
+      border-radius: 3px;
+      border: 1px solid lightgray;
+    }
+    .log-in{
+      padding: 10px 15px;
+      background-color: #00B0FF;
+      border: none;
+      border-radius: 3px;
+      color: white;
+    }
+  }
+
+
+
 
 
   .month{
@@ -279,7 +310,7 @@ body{
           .num{
             font-size: 12px;
             border-radius: 100%;
-            color: darkgray;
+            color: white;
           }
         }
       }
@@ -299,8 +330,8 @@ body{
     border: 1px solid #00E676;
     color: white;
   }
-  .current_month_color{
-    color: white;
+  .dead_month_color{
+    opacity: .5;
   }
 
 
@@ -381,7 +412,7 @@ body{
 @media screen and (max-width: 450px){
   .container{
     .navbar{
-      height: 30px;
+      height: 40px;
       a{
         margin: 2px;
         font-size: 11px;
@@ -393,7 +424,7 @@ body{
     }
 
     .home-page{
-      top: 30px;
+      top: 40px;
       .slogan{
         font-size: 18px;
         .sign-up{
@@ -411,17 +442,17 @@ body{
     }
 
     .title-background{
-      top: 30px;
+      top: 40px;
     }
     .addAccountForm{
-      top: 110px;
+      top: 120px;
     }
 
 
 
     .month{
       height: 75px;
-      top: 30px;
+      top: 40px;
       .select-form{
         height: 30px;
         .selector{
@@ -443,7 +474,7 @@ body{
       }
     }
     .calendar-container{
-      top: 105px;
+      top: 115px;
       height: 600px;
       .days{
         height: 100px;
