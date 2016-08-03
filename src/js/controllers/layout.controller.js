@@ -1,16 +1,15 @@
 import $ from 'jquery';
 
 function LayoutController(){
+  let vm = this;
 
-  // $(window).scroll(function(){
-  //   var top = $(window).scrollTop();
-  //   if (top > 1){
-  //     $('.navbar').addClass('transparent_background');
-  //   }
-  //   else {
-  //     $('.navbar').removeClass('transparent_background');
-  //   }
-  // })
+$('.hamburger').on('click', function(event){
+  $(this).toggleClass('is-active')
+  $('.links').slideToggle('slow')
+})
+
+
+
 
 }
 

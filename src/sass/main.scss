@@ -1,4 +1,16 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+$hamburger-padding-x                       : 15px !default;
+$hamburger-padding-y                       : 15px !default;
+$hamburger-layer-width                     : 40px !default;
+$hamburger-layer-height                    : 4px !default;
+$hamburger-layer-spacing                   : 6px !default;
+$hamburger-layer-color                     : white !default;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 /* fontawesome */
 [class*="fontawesome-"]:before {
@@ -20,35 +32,46 @@ body{
   position: relative;
   .navbar{
     width: 100%;
-    height: 50px;
+    height: 60px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0px;
     left: 0px;
     z-index: 1;
     background-color: #37474F;
-    a{
-      color: white;
-      text-decoration: none;
-      transition: color .2s ease-in-out;
-      margin: 15px;
-      font-size: 13px;
-      .navbar-button{
-        background-color: #00B0FF;
-        border: none;
-        border-radius: 25px;
-        padding: 5px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .hamburger{
+      outline: 0;
+      display: none;
+    }
+    div{
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a{
         color: white;
-        outline: none;
-      }
-      .navbar-button:hover{
-        background-color: #00E676;
-        transition: all .2s ease-in-out;
+        text-decoration: none;
+        transition: color .2s ease-in-out;
+        margin: 15px;
+        font-size: 13px;
+        .navbar-button{
+          background-color: #00B0FF;
+          border: none;
+          border-radius: 25px;
+          padding: 5px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          outline: none;
+        }
+        .navbar-button:hover{
+          background-color: #00E676;
+          transition: all .2s ease-in-out;
+        }
       }
     }
     a:hover{
@@ -62,7 +85,7 @@ body{
     width: 100%;
     height: 100%;
     position: relative;
-    top: 50px;
+    top: 60px;
     .background-image{
       width: 100%;
       max-height: 580px;
@@ -132,7 +155,7 @@ body{
     background-color: #00E676;
     text-align: center;
     position: fixed;
-    top: 50px;
+    top: 60px;
     z-index: 1;
     .title{
       color: white;
@@ -140,7 +163,7 @@ body{
   }
   .addAccountForm{
     position: absolute;
-    top: 130px;
+    top: 140px;
     width: 100%;
     text-align: center;
     margin-top: 30px;
@@ -192,7 +215,7 @@ body{
     width: 100%;
     height: 100px;
     position: fixed;
-    top: 50px;
+    top: 60px;
     left: 0px;
     z-index: 1;
     background-color: #00E676;
@@ -244,7 +267,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    top: 150px;
+    top: 160px;
     .days{
       width: 100%;
       height: 121px;
@@ -331,7 +354,7 @@ body{
     color: white;
   }
   .dead_month_color{
-    opacity: .5;
+    opacity: .3;
   }
 
 
@@ -341,19 +364,21 @@ body{
 @media screen and (max-width: 600px){
   .container{
     .navbar{
-      height: 40px;
-      a{
-        margin: 5px;
-        font-size: 11px;
-      }
-      .navbar-button{
-        margin: 5px;
-        padding: 1px 6px;
+      height: 60px;
+      div{
+        a{
+          margin: 5px;
+          font-size: 11px;
+        }
+        .navbar-button{
+          margin: 5px;
+          padding: 1px 6px;
+        }
       }
     }
 
     .home-page{
-      top: 40px;
+      top: 60px;
       .slogan{
         font-size: 21px;
         .sign-up{
@@ -363,16 +388,16 @@ body{
     }
 
     .title-background{
-      top: 40px;
+      top: 60px;
     }
     .addAccountForm{
-      top: 120px;
+      top: 160px;
     }
 
 
     .month{
       height: 85px;
-      top: 40px;
+      top: 60px;
       .select-form{
         height: 40px;
         .selector{
@@ -385,7 +410,7 @@ body{
       }
     }
     .calendar-container{
-      top: 125px;
+      top: 145px;
       .days{
         height: 16.66%;
         .num-box{
@@ -412,19 +437,41 @@ body{
 @media screen and (max-width: 450px){
   .container{
     .navbar{
-      height: 40px;
-      a{
-        margin: 2px;
-        font-size: 11px;
+      height: 60px;
+      .hamburger{
+        outline: 0;
+        display: block;
       }
-      .navbar-button{
-        margin: 2px;
-        padding: 0px 5px;
+      div{
+        position: fixed;
+        top: 60px;
+        bottom: 0px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        background: rgba(0,0,0, .9);
+        height: 100%;
+        overflow: hidden;
+        padding-top: 10px;
+        a{
+          display: block;
+          height: 10%;
+          padding: 0px;
+          margin: 0px;
+          font-size: 11px;
+          // border-top: 1px solid rgba(255, 255, 255, .7);
+          // border-bottom: 1px solid rgba(255, 255, 255, .2);
+        }
+        .navbar-button{
+          margin: 2px;
+          padding: 0px 5px;
+          display: inline-block !important;
+        }
       }
     }
 
     .home-page{
-      top: 40px;
+      top: 60px;
       .slogan{
         font-size: 18px;
         .sign-up{
@@ -442,17 +489,17 @@ body{
     }
 
     .title-background{
-      top: 40px;
+      top: 60px;
     }
     .addAccountForm{
-      top: 120px;
+      top: 140px;
     }
 
 
 
     .month{
       height: 75px;
-      top: 40px;
+      top: 60px;
       .select-form{
         height: 30px;
         .selector{
@@ -474,7 +521,7 @@ body{
       }
     }
     .calendar-container{
-      top: 115px;
+      top: 135px;
       height: 600px;
       .days{
         height: 100px;
@@ -510,18 +557,20 @@ body{
 @media screen and (max-height: 450px){
   .container{
     .navbar{
-      height: 30px;
-      a{
-        font-size: 11px;
-      }
-      .navbar-button{
-        margin: 2px;
-        padding: 0px 5px;
+      height: 60px;
+      div{
+        a{
+          font-size: 11px;
+        }
+        .navbar-button{
+          margin: 2px;
+          padding: 0px 5px;
+        }
       }
     }
 
     .home-page{
-      top: 30px;
+      top: 60px;
       .slogan{
         top: 25%;
         left: 0px;
@@ -529,17 +578,17 @@ body{
       }
     }
     .title-background{
-      top: 30px;
+      top: 60px;
     }
     .addAccountForm{
-      top: 100px;
+      top: 130px;
     }
 
 
 
     .month{
       height: 75px;
-      top: 30px;
+      top: 60px;
       .select-form{
         height: 30px;
         .selector{
@@ -561,7 +610,7 @@ body{
       }
     }
     .calendar-container{
-      top: 105px;
+      top: 135px;
       height: 600px;
       .days{
         height: 100px;
