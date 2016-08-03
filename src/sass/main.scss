@@ -92,7 +92,7 @@ body{
       .input{
         font-size: 18px;
         border: none;
-        border-radius: 5px;
+        border-radius: 3px;
         padding: 5px 10px;
         font-weight: normal;
         opacity: .9;
@@ -106,6 +106,8 @@ body{
         font-weight: normal;
         transition: opacity .2s ease-in-out;
         outline: none;
+        background-color: lightgray;
+        color: black;
       }
       .log-in:hover{
         opacity: .8;
@@ -122,11 +124,36 @@ body{
     }
   }
 
-  .sign-up_container{
+
+  .title-background{
+    height: 80px;
     width: 100%;
-    height: 100%;
-    position: relative;
+    background-color: #00E676;
+    text-align: center;
+    position: fixed;
     top: 50px;
+    z-index: 1;
+  }
+  .addAccountForm{
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    .add_input{
+      margin: 15px;
+      padding: 10px;
+      width: 55%;
+      border-radius: 3px;
+      border: 1px solid lightgray;
+    }
+    .addAccountSubmit{
+      padding: 10px 15px;
+      background-color: #00B0FF;
+      border: none;
+      border-radius: 3px;
+      color: white;
+    }
   }
 
 
