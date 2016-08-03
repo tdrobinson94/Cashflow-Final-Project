@@ -66,13 +66,13 @@ body{
     .background-image{
       width: 100%;
       max-height: 580px;
-      z-index: -1;
+      z-index: -2;
     }
     .slogan{
       height: 50%;
       width: 100%;
       position: absolute;
-      top: 25%;
+      top: 30%;
       left: 0px;
       text-align: center;
       color: white;
@@ -95,7 +95,8 @@ body{
         border-radius: 5px;
         padding: 5px 10px;
         font-weight: normal;
-        opacity: .5;
+        opacity: .9;
+        background-color: black;
       }
       .log-in{
         font-size: 14px;
@@ -113,7 +114,6 @@ body{
       span{
         font-size: 18px;
         font-weight: normal;
-        color: black;
       }
       .sign-up:hover{
         background-color: #00B0FF;
