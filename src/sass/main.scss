@@ -88,7 +88,7 @@ body{
     top: 60px;
     .background-image{
       width: 100%;
-      max-height: 580px;
+      height: 100%;
       z-index: -2;
     }
     .slogan{
@@ -129,9 +129,9 @@ body{
         font-weight: normal;
         transition: opacity .2s ease-in-out;
         outline: none;
-        background-color: black;
+        background-color: #00B0FF;
         color: white;
-        opacity: .8;
+        opacity: .9;
       }
       .log-in:hover{
         opacity: .6;
@@ -161,55 +161,79 @@ body{
       color: white;
     }
   }
-  .addAccountForm{
+  .form-box{
     position: absolute;
     top: 140px;
     width: 100%;
-    text-align: center;
-    margin-top: 30px;
-    .add_input{
-      margin: 15px;
-      padding: 10px;
-      width: 65%;
+    // height: 100%;
+    .addAccountForm{
+      width: 60%;
+      // height: 80%;
+      text-align: center;
+      margin: 50px auto;
+      padding: 30px 0;
+      border: 1px solid #37474F;
       border-radius: 3px;
-      border: 1px solid lightgray;
+      box-shadow: 1px 1px 10px black;
+      .add_input{
+        margin: 15px;
+        padding: 10px;
+        width: 75%;
+        border-radius: 3px;
+        border: 1px solid lightgray;
+      }
+      .addAccountSubmit{
+        padding: 10px 15px;
+        background-color: #00B0FF;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        margin-bottom: 20px;
+      }
     }
-    .addAccountSubmit{
-      padding: 10px 15px;
-      background-color: #00B0FF;
-      border: none;
+    .loginForm{
+      padding: 30px 0;
+      border: 1px solid #37474F;
       border-radius: 3px;
-      color: white;
-      margin-bottom: 20px;
+      box-shadow: 1px 1px 10px black;
+      width: 60%;
+      text-align: center;
+      margin: 50px auto;
+      div{
+        margin-bottom: 50px;
+      }
+      .login_input{
+        margin: 15px;
+        padding: 10px;
+        width: 75%;
+        border-radius: 3px;
+        border: 1px solid lightgray;
+      }
+      .log-in{
+        padding: 10px 15px;
+        background-color: #00B0FF;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        margin-bottom: 20px;
+      }
     }
   }
-  .loginForm{
+
+  .contact-header{
     position: absolute;
-    top: 130px;
     width: 100%;
-    text-align: center;
-    margin-top: 30px;
-    div{
-      margin-bottom: 50px;
-    }
-    .login_input{
-      margin: 15px;
-      padding: 10px;
-      width: 65%;
-      border-radius: 3px;
-      border: 1px solid lightgray;
-    }
-    .log-in{
-      padding: 10px 15px;
-      background-color: #00B0FF;
-      border: none;
-      border-radius: 3px;
-      color: white;
-      margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    top: 60px;
+    height: 100px;
+    background-color: #00E676;
+    padding: 10px 0px;
+    img{
+      width: 100px;
+      border-radius: 100%;
     }
   }
-
-
 
 
 
@@ -449,6 +473,7 @@ body{
         position: fixed;
         top: 60px;
         bottom: 0px;
+        left: 0;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -463,7 +488,7 @@ body{
           text-align: center;
           padding: 0px;
           margin: 0px;
-          font-size: 11px;
+          font-size: 14px;
           // border-top: 1px solid rgba(255, 255, 255, .7);
           // border-bottom: 1px solid rgba(255, 255, 255, .2);
           .navbar-button{

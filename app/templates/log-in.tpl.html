@@ -1,14 +1,16 @@
 <div class="title-background">
   <h1 class="title">Log-In</h1>
 </div>
-<form id="addAccountForm" class="loginForm" ng-submit="vm.createUser(user)">
-  <h2>
-    Forecast Your Spending and be Prepared for the Future.
-  </h2>
-  <div>
-    Sign in to see your data.
-  </div>
-  <input type="text" class="usernameInput login_input" placeholder="Username" name="username" ng-model="user.username" required><br />
-	<input type="password" class="passwordInput login_input" placeholder="Password" ng-model="user.password" required><br />
-	<button class="log-in">Log-in</button>
-</form>
+<div class="form-box">
+  <form id="addAccountForm" class="loginForm" ng-submit="vm.createUser(user)">
+    <h2>
+      Forecast Your Spending and be Prepared for the Future.
+    </h2>
+    <div>
+      Sign in to see your data.
+    </div>
+    <input type="text" class="usernameInput login_input" placeholder="Username" name="username" ng-model="user.username" required><br />
+    <input type="password" class="passwordInput login_input" placeholder="Password" ng-model="user.password" required><br />
+    <button class="log-in">Log-in</button>
+  </form>
+</div>

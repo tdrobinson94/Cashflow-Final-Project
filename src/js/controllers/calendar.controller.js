@@ -99,7 +99,7 @@ $('.month-selector, .year-selector').on('change', function(event){
     $('.num').empty();
     _.range(1, 43).forEach(function(dayIndex, i) {
       let day = $(days[startOfMonth + dayIndex - 1]);
-      console.log(dayIndex > monthDays);
+      // console.log(dayIndex > monthDays);
       if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
        day.find('.num').parent().addClass("day_background_color");
        day.find('.num').parent().removeClass("dead_month_color");
