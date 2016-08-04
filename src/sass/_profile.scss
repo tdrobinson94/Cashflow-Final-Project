@@ -1,0 +1,28 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  min-height: 285px;
+  position: relative;
+  .contact-header{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 60px;
+    height: 100px;
+    background-color: #00E676;
+    padding: 10px 0px;
+    img{
+      width: 100px;
+      border-radius: 100%;
+    }
+  }
+}

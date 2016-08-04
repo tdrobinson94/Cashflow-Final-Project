@@ -20,23 +20,23 @@ function config($stateProvider, $urlRouterProvider){
   })
 
   .state('root.sign-up', {
-    url: '/sign-up',
+    url: '/sign-up|log-in',
     templateUrl: 'templates/sign-up.tpl.html',
     controller: 'SignUpController as vm'
   })
 
-  .state('root.login-in', {
-    url:'/log-in',
-    templateUrl: 'templates/log-in.tpl.html',
-    controller: 'Log-inController as vm'
-  })
+  // .state('root.login-in', {
+  //   url:'/sign-up',
+  //   templateUrl: 'templates/log-in.tpl.html',
+  //   controller: 'Log-inController as vm'
+  // })
 
   .state('root.profile', {
     url: '/profile',
     templateUrl: 'templates/profile.tpl.html',
     controller: 'ProfileController as vm'
   })
-  
+
   $urlRouterProvider.otherwise('/home');
 
 

@@ -1,0 +1,161 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  min-height: 285px;
+  position: relative;
+
+  .month{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    z-index: 1;
+    background-color: #00E676;
+    .select-form{
+      height: 50px;
+      display: flex;
+      align-items: center;
+      .selector{
+        height: 45px;
+        width: 200px;
+        margin-left: 5px;
+        background-color: transparent;
+        border: 1px solid #00B0FF;
+        outline: none;
+        font-size: 30px;
+        color: white;
+        transition: all .2s ease-in-out;
+      }
+      .selector:hover{
+        color: #00B0FF;
+        background-color: #455A64;
+        transition: all .2s ease-in-out;
+      }
+      .year-selector{
+        width: 100px;
+      }
+    }
+    .day-of-week{
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      .week-day{
+        display: inline-block;
+        width: 14.28%;
+        border-left: 1px solid #455A64;
+        border-right: 1px solid #455A64;
+        span{
+          font-size: 13px;
+          padding-left: 5px;
+          color: #37474F;
+        }
+      }
+    }
+  }
+  .calendar-container{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 160px;
+    .days{
+      width: 100%;
+      height: 121px;
+      overflow: auto;
+      .num-box{
+        box-sizing: border-box;
+        float: left;
+        width: 14.28%;
+        height: 100%;
+        border: 1px solid #455A64;
+        background-color: #37474F;
+        position: relative;
+        transition: all .2s ease-in-out;
+        .plus-button{
+          visibility: hidden;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #00E676;
+          font-size: 25px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          transition: opacity .2s ease-in-out;
+        }
+        .plus-button:hover{
+          opacity: .5;
+          transition: all .2s ease-in-out;
+        }
+        .minus-button{
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          visibility: hidden;
+          color: #F44336;
+          font-size: 25px;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          transition: opacity .2s ease-in-out;
+        }
+        .minus-button:hover{
+          opacity: .5;
+          transition: all .2s ease-in-out;
+        }
+        .num-container{
+          float: right;
+          border-radius: 100%;
+          margin: 5px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+          transition: background-color .2s ease-in-out;
+          .num{
+            font-size: 12px;
+            border-radius: 100%;
+            color: white;
+          }
+        }
+      }
+      #num-box:hover{
+        opacity: .8;
+        transition: all .2s ease-in-out;
+        .plus-button{
+          visibility: visible;
+        }
+        .minus-button{
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .day_background_color{
+    border: 1px solid #00E676;
+    color: white;
+  }
+  .dead_month_color{
+    opacity: .3;
+  }
+
+}

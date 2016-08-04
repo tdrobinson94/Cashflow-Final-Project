@@ -1,8 +1,10 @@
-<div class="title-background">
+<!-- <div class="title-background">
   <h1 class="title">Sign Up</h1>
-</div>
+</div> -->
 <div class="form-box">
+  <!-- <div class="options"><span>Sign Up</span> | <span>Log In</span></div> -->
   <form id="addAccountForm" class="addAccountForm" ng-submit="vm.createUser(user)">
+    <span>Sign Up</span>
     <h2>
       Forecast Your Spending and be Prepared for the Future.
     </h2>
@@ -12,5 +14,17 @@
     <input type="email" class="emailInput add_input" placeholder="Email" ng-model="user.email" required><br />
     <input type="password" class="passwordInput add_input" placeholder="Password" ng-model="user.password" required><br />
     <button class="addAccountSubmit">Sign Up</button>
+  </form>
+  <form id="addAccountForm" class="loginForm" ng-submit="vm.createUser(user)">
+    <span>Log In</span>
+    <h2>
+      Forecast Your Spending and be Prepared for the Future.
+    </h2>
+    <div>
+      Sign in to see your data.
+    </div>
+    <input type="text" class="usernameInput login_input" placeholder="Username" name="username" ng-model="user.username" required><br />
+    <input type="password" class="passwordInput login_input" placeholder="Password" ng-model="user.password" required><br />
+    <button class="log-in">Log-in</button>
   </form>
 </div>
