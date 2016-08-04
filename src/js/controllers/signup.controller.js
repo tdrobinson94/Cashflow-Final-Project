@@ -2,17 +2,19 @@ import $ from 'jquery';
 
 function SignUpController() {
 
-  // let vm = this;
-  //
-  // vm.showSignUp = showSignUp;
-  //
-  //
-  //
-  // function showSignUp(){
-  //   $
-  // }
+  let vm = this;
+  let show = false;
+  vm.showSignup = showSignup;
+  vm.showLogin = showLogin;
 
 
+  function showSignup(){
+    show = true;
+  }
+
+  function showLogin(){
+    show = true
+  }
 
 }
 
