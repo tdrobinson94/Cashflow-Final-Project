@@ -1,0 +1,115 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+$hamburger-padding-x                       : 15px !default;
+$hamburger-padding-y                       : 15px !default;
+$hamburger-layer-width                     : 40px !default;
+$hamburger-layer-height                    : 4px !default;
+$hamburger-layer-spacing                   : 6px !default;
+$hamburger-layer-color                     : white !default;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
+
+
+.container{
+  .navbar{
+    height: 60px;
+    div{
+      a{
+        font-size: 11px;
+      }
+      .navbar-button{
+        margin: 2px;
+        padding: 0px 5px;
+      }
+    }
+  }
+
+  .home-page{
+    top: 60px;
+    .slogan{
+      top: 25%;
+      left: 0px;
+      text-align: center;
+    }
+  }
+  .title-background{
+    top: 60px;
+  }
+  .addAccountForm{
+    top: 130px;
+  }
+
+
+
+  .month{
+    height: 75px;
+    top: 60px;
+    .select-form{
+      height: 30px;
+      .selector{
+        height: 25px;
+        width: 100px;;
+        font-size: 15px;
+      }
+      .year-selector{
+        width: 75px;
+      }
+    }
+    .day-of-week{
+      height: 45px;
+      .week-day{
+        span{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .calendar-container{
+    top: 135px;
+    height: 600px;
+    .days{
+      height: 100px;
+      .num-box{
+        .plus-button{
+          font-size: 30px;
+        }
+        .minus-button{
+          font-size: 30px;
+        }
+        .num-container{
+          width: 15px;
+          height: 15px;
+          padding: 5px;
+          .num{
+            font-size: 10px;
+          }
+        }
+      }
+      #num-box:hover{
+        .plus-button{
+          visibility: hidden;
+        }
+        .minus-button{
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

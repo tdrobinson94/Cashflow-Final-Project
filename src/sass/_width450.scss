@@ -1,0 +1,152 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+$hamburger-padding-x                       : 15px !default;
+$hamburger-padding-y                       : 15px !default;
+$hamburger-layer-width                     : 40px !default;
+$hamburger-layer-height                    : 4px !default;
+$hamburger-layer-spacing                   : 6px !default;
+$hamburger-layer-color                     : white !default;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
+
+
+.container{
+  .navbar{
+    height: 60px;
+    z-index: 3;
+    .hamburger{
+      outline: 0;
+      display: block;
+    }
+    div{
+      position: fixed;
+      top: 60px;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background: rgba(0,0,0, .9);
+      height: auto;
+      overflow: hidden;
+      a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        font-size: 14px;
+        // border-top: 1px solid rgba(255, 255, 255, .7);
+        // border-bottom: 1px solid rgba(255, 255, 255, .2);
+        .navbar-button{
+          margin: 2px;
+          padding: 10px 15px;
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+
+  .home-page{
+    top: 60px;
+    .slogan{
+      font-size: 18px;
+      .sign-up{
+        font-size: 13px;
+        padding: 5px 15px;
+      }
+      .log-in{
+        font-size: 12px;
+        padding: 3px 7px;
+      }
+      span{
+        font-size: 14px;
+      }
+    }
+  }
+
+  .form-box{
+    .addAccountForm{
+
+    }
+    .loginForm{
+
+    }
+  }
+
+
+
+  .month{
+    height: 75px;
+    top: 60px;
+    .select-form{
+      height: 30px;
+      .selector{
+        height: 25px;
+        width: 100px;
+        font-size: 15px;
+      }
+      .year-selector{
+        width: 75px;
+      }
+    }
+    .day-of-week{
+      height: 45px;
+      .week-day{
+        span{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .calendar-container{
+    top: 135px;
+    height: 600px;
+    .days{
+      height: 100px;
+      .num-box{
+        .plus-button{
+          font-size: 30px;
+        }
+        .minus-button{
+          font-size: 30px;
+        }
+        .num-container{
+          margin: 5px;
+          width: 15px;
+          height: 15px;
+          .num{
+            font-size: 10px;
+          }
+        }
+      }
+      #num-box:hover{
+        .plus-button{
+          visibility: hidden;
+        }
+        .minus-button{
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
