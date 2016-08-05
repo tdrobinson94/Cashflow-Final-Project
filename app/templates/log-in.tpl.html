@@ -1,0 +1,15 @@
+<div class="form-box">
+  <div class="options"><a href="/#/sign-up">Sign Up</a> | <a href="/#/log-in">Log In</a></div>
+  <form id="addAccountForm" class="loginForm" ng-submit="vm.createUser(user)">
+    <span>Log In</span>
+    <h2>
+      Forecast Your Spending and be Prepared for the Future.
+    </h2>
+    <div>
+      Sign in to see your data.
+    </div>
+    <input type="text" class="usernameInput login_input" placeholder="Username" name="username" ng-model="user.username" required><br />
+    <input type="password" class="passwordInput login_input" placeholder="Password" ng-model="user.password" required><br />
+    <button class="log-in">Log-in</button>
+  </form>
+</div>

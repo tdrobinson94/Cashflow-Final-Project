@@ -40,13 +40,6 @@ function LayoutController(){
 
   $(window).resize(setNavigation)
 
-
-
-  // $('.log-in-navbar').on('click', function(){
-  //
-  // })
-
-
 }
 
 LayoutController.$inject = [];
