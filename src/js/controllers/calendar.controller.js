@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import $ from 'jquery';
-import moment from 'moment';
+import { MONTHS } from '../utilities/months.constant';
 
 function CalendarController() {
 
@@ -8,56 +8,6 @@ function CalendarController() {
   let month = clock.getMonth();
   let year = clock.getFullYear();
 
-  const MONTHS = [
-  {
-    name: "January",
-    days: 31
-  },
-  {
-    name: "February",
-    days: 28
-  },
-  {
-    name: "March",
-    days: 31
-  },
-  {
-    name: "April",
-    days: 30
-  },
-  {
-    name: "May",
-    days: 31
-  },
-  {
-    name: "June",
-    days: 30
-  },
-  {
-    name: "July",
-    days: 31
-  },
-  {
-    name: "August",
-    days: 31
-  },
-  {
-    name: "September",
-    days: 30
-  },
-  {
-    name: "October",
-    days: 31
-  },
-  {
-    name: "November",
-    days: 30
-  },
-  {
-    name: "December",
-    days: 31
-  }
-];
 
 $('.month-selector').append(`
   <option value="${month}" selected>${MONTHS[month].name}</option>
@@ -91,11 +41,16 @@ $('.month-selector').append(`
 
     $('.prev').on('click', function(event){
       event.preventDefault();
-      if($('#month').val() == null || $('#month').val() == 0){
-        $('#month').val(11).change()
-        $('#year').val(Number($('#year').val()) - 1).change()
+      if($('#year').val() <= (year - 5)){
+        $('#year').val(year - 5).change()
+        $('#month').val(0).change()
       } else {
-        $('#month').val(Number($('#month').val()) - 1).change()
+        if($('#month').val() == null || $('#month').val() == 0){
+          $('#month').val(11).change()
+          $('#year').val(Number($('#year').val()) - 1).change()
+        } else {
+          $('#month').val(Number($('#month').val()) - 1).change()
+        }
       }
     })
 
@@ -107,11 +62,16 @@ $('.month-selector').append(`
 
     $('.next').on('click', function(event){
       event.preventDefault();
-      if($('#month').val() == null || $('#month').val() == 11){
-        $('#month').val(0).change()
-        $('#year').val(Number($('#year').val()) + 1).change()
+      if($('#year').val() >= (year + 5) && $('#month').val() == 11){
+        $('#year').val(year + 5).change()
+        $('#month').val(11).change()
       } else {
-        $('#month').val(Number($('#month').val()) + 1).change()
+        if($('#month').val() == null || $('#month').val() == 11){
+          $('#month').val(0).change()
+          $('#year').val(Number($('#year').val()) + 1).change()
+        } else {
+          $('#month').val(Number($('#month').val()) + 1).change()
+        }
       }
     })
 

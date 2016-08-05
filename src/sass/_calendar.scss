@@ -54,9 +54,12 @@ body{
           margin: 5px;
           background-color: #00B0FF;
           color: white;
+          transition: all .2s ease-in-out;
         }
         .button:hover{
+          color: #00e676;
           opacity: .8;
+          transition: all .2s ease-in-out;
         }
       }
     }
