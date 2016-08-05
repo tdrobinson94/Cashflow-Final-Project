@@ -89,17 +89,15 @@ $('.month-selector').append(`
     <option value="${year + 5}">${year + 5}</option>
     `)
 
-    let currentMonth = $('#month').val();
-    let currentYear = $('#year').val();
-
     $('.prev').on('click', function(event){
       event.preventDefault();
-      if(currentMonth = undefined){
-        currentMonth = 0
-      } else {
-        currentMonth = $('#month').val();
-      }
       $('#month').val(Number($('#month').val()) - 1).change()
+    })
+
+    $('.current').on('click', function(event){
+      event.preventDefault();
+      $('#month').val(month).change()
+      $('#year').val(year).change()
     })
 
     $('.next').on('click', function(event){
