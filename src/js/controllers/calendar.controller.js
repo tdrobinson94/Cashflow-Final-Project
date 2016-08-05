@@ -2,7 +2,7 @@ import _ from 'lodash';
 import $ from 'jquery';
 import moment from 'moment';
 
-function CalendarController($scope) {
+function CalendarController() {
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -89,11 +89,32 @@ $('.month-selector').append(`
     <option value="${year + 5}">${year + 5}</option>
     `)
 
+    let currentMonth = $('#month').val();
+    let currentYear = $('#year').val();
+
+    $('.prev').on('click', function(event){
+      event.preventDefault();
+      if(currentMonth = undefined){
+        currentMonth = 0
+      } else {
+        currentMonth = $('#month').val();
+      }
+      $('#month').val(Number($('#month').val()) - 1).change()
+    })
+
+    $('.next').on('click', function(event){
+      event.preventDefault();
+      $('#month').val(Number($('#month').val()) + 1).change()
+    })
+
+
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
   let renderMonth = function () {
-    MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28
-    let startOfMonth = new Date($('#year').val(), $('#month').val(), 1).getDay();
+    MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
+    let currentMonth = $('#month').val();
+    let currentYear = $('#year').val();
+    let startOfMonth = new Date(currentYear, currentMonth , 1).getDay();
     let monthDays = MONTHS[$('#month').val()].days;
     let days = $(".days").children();
     $('.num').empty();
@@ -115,7 +136,7 @@ $('.month-selector, .year-selector').on('change', function(event){
     })
   };
 
-  function renderPrevMonth(){
+  function renderPrevMonthDays(){
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28
     let startOfMonth = new Date($('#year').val(), $('#month').val(), 1).getDay();
     let monthDays = MONTHS[$('#month').val()].days;
@@ -133,7 +154,7 @@ $('.month-selector, .year-selector').on('change', function(event){
   }
 
   renderMonth();
-  renderPrevMonth();
+  renderPrevMonthDays();
 
 })
 
