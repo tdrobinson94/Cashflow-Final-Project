@@ -91,7 +91,12 @@ $('.month-selector').append(`
 
     $('.prev').on('click', function(event){
       event.preventDefault();
-      $('#month').val(Number($('#month').val()) - 1).change()
+      if($('#month').val() == null || $('#month').val() == 0){
+        $('#month').val(11).change()
+        $('#year').val(Number($('#year').val()) - 1).change()
+      } else {
+        $('#month').val(Number($('#month').val()) - 1).change()
+      }
     })
 
     $('.current').on('click', function(event){
@@ -102,7 +107,12 @@ $('.month-selector').append(`
 
     $('.next').on('click', function(event){
       event.preventDefault();
-      $('#month').val(Number($('#month').val()) + 1).change()
+      if($('#month').val() == null || $('#month').val() == 11){
+        $('#month').val(0).change()
+        $('#year').val(Number($('#year').val()) + 1).change()
+      } else {
+        $('#month').val(Number($('#month').val()) + 1).change()
+      }
     })
 
 
