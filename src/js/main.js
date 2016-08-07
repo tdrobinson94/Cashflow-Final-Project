@@ -14,6 +14,7 @@ import { CalendarService } from './services/calendar.service';
 import { CalendarController } from './controllers/calendar.controller';
 import { HomeController } from './controllers/home.controller';
 import { LayoutController } from './controllers/layout.controller';
+import { ProfileController } from './controllers/profile.controller';
 
 
 
@@ -26,5 +27,6 @@ angular
   .controller('CalendarController', CalendarController)
   .controller('HomeController', HomeController)
   .controller('LayoutController', LayoutController)
+  .controller('ProfileController', ProfileController)
 
 ;
