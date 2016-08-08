@@ -21,6 +21,7 @@ function LayoutController(LoginService, $rootScope){
     setNavigation();
     hamburgerHandler();
     linksHandler();
+    vm.loggedIn = LoginService.loggedIn();
   };
 
   init();
