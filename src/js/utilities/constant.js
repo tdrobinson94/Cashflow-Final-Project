@@ -1,5 +1,5 @@
 const serverConstant = {
-  URL: 'https://class-server.herokuapp.com/collections/terry-calendar/'
+  URL: 'https://adonis-auth-terry.herokuapp.com/'
 }
 
 export { serverConstant };

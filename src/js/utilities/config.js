@@ -25,10 +25,10 @@ function config($stateProvider, $urlRouterProvider){
     controller: 'SignUpController as vm'
   })
 
-  .state('root.login-in', {
+  .state('root.log-in', {
     url:'/log-in',
     templateUrl: 'templates/log-in.tpl.html',
-    controller: 'Log-inController as vm'
+    controller: 'LoginController as vm'
   })
 
   .state('root.profile', {

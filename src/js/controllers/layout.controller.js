@@ -1,10 +1,21 @@
 import $ from 'jquery';
 
-function LayoutController(){
+function LayoutController(LoginService, $rootScope){
   let vm = this;
+  vm.logOut = logOut;
 
   vm.setNavigation = setNavigation;
   vm.init = init;
+  $rootScope.$on('loginChange', function(event, status){
+    console.log('somthing.');
+    vm.loggedIn = status;
+    console.log('am i logged in?', vm.loggedIn);
+  });
+
+  function logOut(){
+    LoginService.logOut();
+    vm.loggedIn = false;
+  }
 
   function init() {
     setNavigation();
@@ -42,6 +53,6 @@ function LayoutController(){
 
 }
 
-LayoutController.$inject = [];
+LayoutController.$inject = ['LoginService', '$rootScope'];
 
 export { LayoutController };

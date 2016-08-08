@@ -6,11 +6,12 @@
   </button>
   <div class="links">
     <a href="/#/home">Home</a>
-    <a href="/#/calendar">Calendar</a>
-    <a href="/#/profile">Account/Profile</a>
+    <a href="/#/calendar" ng-show="vm.loggedIn">Calendar</a>
+    <a href="/#/profile" ng-show="vm.loggedIn">Account/Profile</a>
     <a href="">Contact/FAQ</a>
-    <a href="/#/log-in" class="login fontawesome-unlock"> Log In</a>
-    <a href="/#/sign-up"><button class="sign-up-navbar navbar-button" ng-click="">Sign Up</button></a>
+    <a href="/#/log-in" class="login fontawesome-lock" ng-show="vm.loggedIn" ng-click="vm.logOut()"> Log Out</a>
+    <a href="/#/log-in" class="login fontawesome-unlock" ng-hide="vm.loggedIn"> Log In</a>
+    <a href="/#/sign-up" ng-hide="vm.loggedIn"><button class="sign-up-navbar navbar-button">Sign Up</button></a>
   </div>
 </nav>
 
