@@ -1,12 +1,39 @@
 import _ from 'lodash';
 import $ from 'jquery';
 import { MONTHS } from '../utilities/months.constant';
+import angular from 'angular';
+import { DayViewController } from './day-view.controller.js';
 
-function CalendarController() {
+function CalendarController($scope, $mdDialog, $mdMedia) {
 
   let clock = new Date();
   let month = clock.getMonth();
   let year = clock.getFullYear();
+
+  $scope.status = '  ';
+  $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+
+  $scope.showAdvanced = function(ev) {
+    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+    $mdDialog.show({
+      controller: DayViewController,
+      templateUrl: 'templates/day-view.tpl.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: useFullScreen
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+    $scope.$watch(function() {
+      return $mdMedia('xs') || $mdMedia('sm');
+    }, function(wantsFullScreen) {
+      $scope.customFullscreen = (wantsFullScreen === true);
+    });
+  };
 
 
 $('.month-selector').append(`
@@ -130,6 +157,6 @@ $('.month-selector').change();
 
 }
 
-CalendarController.$inject = ['$scope'];
+CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia'];
 
 export { CalendarController };
