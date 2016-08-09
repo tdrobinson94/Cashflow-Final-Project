@@ -10,7 +10,6 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
   vm.next = next;
   vm.prev = prev;
   vm.current = current;
-  // vm.renderMonth();
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -43,7 +42,7 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
   };
 
 
-$('.month-selector').html(`
+$(document).find('#month').html(`
   <option value="${month}" selected>${MONTHS[month].name}</option>
   <option value="0">${MONTHS[0].name}</option>
   <option value="1">${MONTHS[1].name}</option>
@@ -59,7 +58,7 @@ $('.month-selector').html(`
   <option value="11">${MONTHS[11].name}</option>
   `)
 
-  $('.year-selector').html(`
+  $(document).find('#year').html(`
     <option value="${year - 5}">${year - 5}</option>
     <option value="${year - 4}">${year - 4}</option>
     <option value="${year - 3}">${year - 3}</option>
@@ -73,20 +72,19 @@ $('.month-selector').html(`
     <option value="${year + 5}">${year + 5}</option>
     `)
 
-
+//Needs to be refactored
 $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
   let renderMonth = function () {
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
-    let currentMonth = $('#month').val();
-    let currentYear = $('#year').val();
+    let currentMonth = $(document).find('#month').val();
+    let currentYear = $(document).find('#year').val();
     let startOfMonth = new Date(currentYear, currentMonth , 1).getDay();
-    let monthDays = MONTHS[$('#month').val()].days;
-    let days = $(".days").children();
-    $('.num').empty();
+    let monthDays = MONTHS[$(document).find('#month').val()].days;
+    let days = $(document).find('.days').children();
+    $(document).find('.num').empty();
     _.range(1, 43).forEach(function(dayIndex, i) {
       let day = $(days[startOfMonth + dayIndex - 1]);
-      // console.log(dayIndex > monthDays);
       if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
        day.find('.num').parent().addClass("day_background_color");
        day.find('.num').parent().removeClass("dead_month_color");
@@ -103,11 +101,11 @@ $('.month-selector, .year-selector').on('change', function(event){
   };
 
   function renderPrevMonthDays(){
-    MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28
-    let startOfMonth = new Date($('#year').val(), $('#month').val(), 1).getDay();
-    let monthDays = MONTHS[$('#month').val()].days;
-    let prevMonthDays = $('#month').val() == 0 ? 31 : MONTHS[$('#month').val() - 1].days;
-    let days = $(".days").children();
+    MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
+    let startOfMonth = new Date($(document).find('#year').val(), $(document).find('#month').val(), 1).getDay();
+    let monthDays = MONTHS[$(document).find('#month').val()].days;
+    let prevMonthDays = $(document).find('#month').val() == 0 ? 31 : MONTHS[$(document).find('#month').val() - 1].days;
+    let days = $(document).find('.days').children();
     let prevDays = _.range(1, prevMonthDays + 1).slice(-startOfMonth);
     _.range(0, startOfMonth).forEach(function(dayIndex){
       let day = $(days[dayIndex]);
@@ -123,37 +121,38 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
+//Needs to be refactored
 $('.month-selector').change();
 
   function prev(){
-    if($('#year').val() <= (year - 5)){
-      $('#year').val(year - 5).change()
-      $('#month').val(0).change()
+    if($(document).find('#year').val() <= (year - 5)){
+      $(document).find('#year').val(year - 5).change()
+      $(document).find('#month').val(0).change()
     } else {
       if($('#month').val() == null || $('#month').val() == 0){
-        $('#month').val(11).change()
-        $('#year').val(Number($('#year').val()) - 1).change()
+        $(document).find('#month').val(11).change()
+        $(document).find('#year').val(Number($(document).find('#year').val()) - 1).change()
       } else {
-        $('#month').val(Number($('#month').val()) - 1).change()
+        $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
       }
     }
   }
 
   function current(){
-    $('#month').val(month).change()
-    $('#year').val(year).change()
+    $(document).find('#month').val(month).change()
+    $(document).find('#year').val(year).change()
   }
 
   function next(){
-    if($('#year').val() >= (year + 5) && $('#month').val() == 11){
-      $('#year').val(year + 5).change()
-      $('#month').val(11).change()
+    if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
+      $(document).find('#year').val(year + 5).change()
+      $(document).find('#month').val(11).change()
     } else {
-      if($('#month').val() == null || $('#month').val() == 11){
-        $('#month').val(0).change()
-        $('#year').val(Number($('#year').val()) + 1).change()
+      if($(document).find('#month').val() == null || $(document).find('#month').val() == 11){
+        $(document).find('#month').val(0).change()
+        $(document).find('#year').val(Number($(document).find('#year').val()) + 1).change()
       } else {
-        $('#month').val(Number($('#month').val()) + 1).change()
+        $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
   }
