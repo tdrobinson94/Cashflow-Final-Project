@@ -1,33 +1,25 @@
-<md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+<md-dialog aria-label="Day View"  class="dialog-box" ng-cloak>
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Day View</h2>
+        <h2 class="title">Day View</h2>
         <span flex></span>
+        <button class="close" ng-click="hide()">&times;</button>
       </div>
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
         <div class="content-box">
-          <span>Beginning Balance: </span>
-          <ul>
-            Transactions
-            <ul>
-              Incomes
-            </ul>
-            <ul>
-              Expenses
-            </ul>
-          </ul>
-          <span>Ending Balance: </span>
+          <span class="beg-balance">Beginning Balance: </span><br />
+
+          <span class="end-balance">Ending Balance: </span>
         </div>
       </div>
     </md-dialog-content>
-    <md-dialog-actions class="md-dialog-actions" layout="row">
+    <md-dialog-actions layout="row">
       <span flex></span>
-      <md-button ng-click="answer('useful')">
-        Close
-      </md-button>
+      <button class="plus-button button fontawesome-plus-sign"></button>
+      <button class="minus-button button fontawesome-minus-sign"></button>
     </md-dialog-actions>
   </form>
 </md-dialog>

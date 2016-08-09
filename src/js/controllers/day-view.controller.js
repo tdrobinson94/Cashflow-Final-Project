@@ -5,9 +5,6 @@ function DayViewController ($scope, $mdDialog){
   $scope.cancel = function() {
     $mdDialog.cancel();
   };
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
-  };
 }
 
 DayViewController.$inject = ['$scope', '$mdDialog'];

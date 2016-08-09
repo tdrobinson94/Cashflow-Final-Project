@@ -1,9 +1,73 @@
-.md-toolbar-tools{
-  background-color: #00B0FF;
-}
-.md-dialog-content{
+.dialog-box{
+  background: #37474F;
+  width: 50%;
+  height: 75%;
+  form{
+    md-toolbar{
+      .md-toolbar-tools{
+        background-color: #00E676;
+        .title{
 
-}
-.md.dialog-actions{
-  
+        }
+        .close{
+          border: none;
+          border-radius: 3px;
+          outline: none;
+          color: white;
+          background: transparent;
+          transition: color .2s ease-in-out;
+          font-size: 40px;
+        }
+        .close:hover{
+          color: #00B0FF;
+          transition: color .2s ease-in-out;
+        }
+      }
+
+    }
+    md-dialog-content{
+
+      .md-dialog-content{
+        .content-box{
+          .beg-balance{
+            color: white;
+          }
+          .end-balance{
+            color: white;
+          }
+        }
+      }
+    }
+    md-dialog-actions{
+
+      .plus-button{
+        border-radius: 100%;
+        border: none;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        background: transparent;
+        color: #00E676;
+        outline: none;
+        font-size: 35px;
+        transition: opacity .2s ease-in-out;
+      }
+      .minus-button{
+        border-radius: 100%;
+        border: none;
+        position: absolute;
+        left: 10px;
+        bottom: 5px;
+        background: transparent;
+        color: #F44336;
+        outline: none;
+        font-size: 35px;
+        transition: opacity .2s ease-in-out;
+      }
+      .button:hover{
+        opacity: .7;
+        transition: opacity .2s ease-in-out;
+      }
+    }
+  }
 }
