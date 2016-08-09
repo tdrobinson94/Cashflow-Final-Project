@@ -5,9 +5,9 @@
           <select name="select" class="year-selector selector" id="year">
           </select>
           <div class="button-box">
-            <button class="prev button">Prev</button>
-            <button class="current button">Today</button>
-            <button class="next button">Next</button>
+            <button class="prev button" ng-click="vm.prev()">Prev</button>
+            <button class="current button" ng-click="vm.current()">Today</button>
+            <button class="next button" ng-click="vm.next()">Next</button>
           </div>
         </form>
         <div class="day-of-week">

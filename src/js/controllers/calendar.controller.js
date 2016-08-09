@@ -6,6 +6,12 @@ import { DayViewController } from './day-view.controller.js';
 
 function CalendarController($scope, $mdDialog, $mdMedia) {
 
+  let vm = this;
+  vm.next = next;
+  vm.prev = prev;
+  vm.current = current;
+  // vm.renderMonth();
+
   let clock = new Date();
   let month = clock.getMonth();
   let year = clock.getFullYear();
@@ -117,47 +123,40 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
-
 $('.month-selector').change();
 
-$('.prev').on('click', function(event){
-  event.preventDefault();
-  if($('#year').val() <= (year - 5)){
-    $('#year').val(year - 5).change()
-    $('#month').val(0).change()
-  } else {
-    if($('#month').val() == null || $('#month').val() == 0){
-      $('#month').val(11).change()
-      $('#year').val(Number($('#year').val()) - 1).change()
-    } else {
-      $('#month').val(Number($('#month').val()) - 1).change()
-      console.log($('#month').val());
-    }
-  }
-})
-
-$('.current').on('click', function(event){
-  event.preventDefault();
-  $('#month').val(month).change()
-  $('#year').val(year).change()
-  console.log($('#month').val());
-})
-
-$('.next').on('click', function(event){
-  event.preventDefault();
-  if($('#year').val() >= (year + 5) && $('#month').val() == 11){
-    $('#year').val(year + 5).change()
-    $('#month').val(11).change()
-  } else {
-    if($('#month').val() == null || $('#month').val() == 11){
+  function prev(){
+    if($('#year').val() <= (year - 5)){
+      $('#year').val(year - 5).change()
       $('#month').val(0).change()
-      $('#year').val(Number($('#year').val()) + 1).change()
     } else {
-      $('#month').val(Number($('#month').val()) + 1).change()
-      console.log($('#month').val());
+      if($('#month').val() == null || $('#month').val() == 0){
+        $('#month').val(11).change()
+        $('#year').val(Number($('#year').val()) - 1).change()
+      } else {
+        $('#month').val(Number($('#month').val()) - 1).change()
+      }
     }
   }
-})
+
+  function current(){
+    $('#month').val(month).change()
+    $('#year').val(year).change()
+  }
+
+  function next(){
+    if($('#year').val() >= (year + 5) && $('#month').val() == 11){
+      $('#year').val(year + 5).change()
+      $('#month').val(11).change()
+    } else {
+      if($('#month').val() == null || $('#month').val() == 11){
+        $('#month').val(0).change()
+        $('#year').val(Number($('#year').val()) + 1).change()
+      } else {
+        $('#month').val(Number($('#month').val()) + 1).change()
+      }
+    }
+  }
 
 }
 

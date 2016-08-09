@@ -8,7 +8,6 @@ function DayViewController ($scope, $mdDialog){
   };
 
 
-
 }
 
 DayViewController.$inject = ['$scope', '$mdDialog'];
