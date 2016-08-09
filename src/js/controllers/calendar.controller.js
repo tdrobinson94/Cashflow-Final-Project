@@ -35,23 +35,9 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
     });
 
   };
-  $scope.openFromLeft = function() {
-    $mdDialog.show(
-      $mdDialog.alert()
-        .clickOutsideToClose(true)
-        .title('Opening from the left')
-        .textContent('Closing to the right!')
-        .ariaLabel('Left to right demo')
-        .ok('Nice!')
-        // You can specify either sting with query selector
-        .openFrom('#left')
-        // or an element
-        .closeTo(angular.element(document.querySelector('#right')))
-    );
-  };
 
 
-$('.month-selector').append(`
+$('.month-selector').html(`
   <option value="${month}" selected>${MONTHS[month].name}</option>
   <option value="0">${MONTHS[0].name}</option>
   <option value="1">${MONTHS[1].name}</option>
@@ -67,7 +53,7 @@ $('.month-selector').append(`
   <option value="11">${MONTHS[11].name}</option>
   `)
 
-  $('.year-selector').append(`
+  $('.year-selector').html(`
     <option value="${year - 5}">${year - 5}</option>
     <option value="${year - 4}">${year - 4}</option>
     <option value="${year - 3}">${year - 3}</option>
@@ -80,42 +66,6 @@ $('.month-selector').append(`
     <option value="${year + 4}">${year + 4}</option>
     <option value="${year + 5}">${year + 5}</option>
     `)
-
-    $('.prev').on('click', function(event){
-      event.preventDefault();
-      if($('#year').val() <= (year - 5)){
-        $('#year').val(year - 5).change()
-        $('#month').val(0).change()
-      } else {
-        if($('#month').val() == null || $('#month').val() == 0){
-          $('#month').val(11).change()
-          $('#year').val(Number($('#year').val()) - 1).change()
-        } else {
-          $('#month').val(Number($('#month').val()) - 1).change()
-        }
-      }
-    })
-
-    $('.current').on('click', function(event){
-      event.preventDefault();
-      $('#month').val(month).change()
-      $('#year').val(year).change()
-    })
-
-    $('.next').on('click', function(event){
-      event.preventDefault();
-      if($('#year').val() >= (year + 5) && $('#month').val() == 11){
-        $('#year').val(year + 5).change()
-        $('#month').val(11).change()
-      } else {
-        if($('#month').val() == null || $('#month').val() == 11){
-          $('#month').val(0).change()
-          $('#year').val(Number($('#year').val()) + 1).change()
-        } else {
-          $('#month').val(Number($('#month').val()) + 1).change()
-        }
-      }
-    })
 
 
 $('.month-selector, .year-selector').on('change', function(event){
@@ -169,6 +119,45 @@ $('.month-selector, .year-selector').on('change', function(event){
 })
 
 $('.month-selector').change();
+
+$('.prev').on('click', function(event){
+  event.preventDefault();
+  if($('#year').val() <= (year - 5)){
+    $('#year').val(year - 5).change()
+    $('#month').val(0).change()
+  } else {
+    if($('#month').val() == null || $('#month').val() == 0){
+      $('#month').val(11).change()
+      $('#year').val(Number($('#year').val()) - 1).change()
+    } else {
+      $('#month').val(Number($('#month').val()) - 1).change()
+      console.log($('#month').val());
+    }
+  }
+})
+
+$('.current').on('click', function(event){
+  event.preventDefault();
+  $('#month').val(month).change()
+  $('#year').val(year).change()
+  console.log($('#month').val());
+})
+
+$('.next').on('click', function(event){
+  event.preventDefault();
+  if($('#year').val() >= (year + 5) && $('#month').val() == 11){
+    $('#year').val(year + 5).change()
+    $('#month').val(11).change()
+  } else {
+    if($('#month').val() == null || $('#month').val() == 11){
+      $('#month').val(0).change()
+      $('#year').val(Number($('#year').val()) + 1).change()
+    } else {
+      $('#month').val(Number($('#month').val()) + 1).change()
+      console.log($('#month').val());
+    }
+  }
+})
 
 }
 

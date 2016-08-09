@@ -7,7 +7,6 @@ function LayoutController(LoginService, $rootScope){
   vm.setNavigation = setNavigation;
   vm.init = init;
   $rootScope.$on('loginChange', function(event, status){
-    console.log('somthing.');
     vm.loggedIn = status;
     console.log('am i logged in?', vm.loggedIn);
   });
