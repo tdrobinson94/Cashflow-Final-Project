@@ -20,7 +20,6 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
 
   $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-    console.log(ev);
     $mdDialog.show({
       controller: DayViewController,
       templateUrl: 'templates/day-view.tpl.html',
@@ -99,10 +98,8 @@ $('.month-selector, .year-selector').on('change', function(event){
          currentYear = Number(currentYear) + 1;
        }
        day.find('.num-date').html(nextMonth + '/' + (dayIndex - monthDays) + '/' + currentYear);
-        // console.log(nextMonth + '/' + (dayIndex - monthDays) + '/' + currentYear);
      } else {
        day.find('.num').html(dayIndex);
-      //  console.log(currentMonth + '/' + (dayIndex) + '/' + currentYear);
        day.find('.num-date').html((Number(currentMonth) + 1) + '/' + (dayIndex) + '/' + currentYear);
      }
     })
@@ -124,9 +121,8 @@ $('.month-selector, .year-selector').on('change', function(event){
           prevMonth = 12;
           currentYear = Number(currentYear) - 1;
         }
-//        day.data("date", prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
         day.find('.num-date').html(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
-        // console.log(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
+
         day.find('.num').parent().addClass("dead_month_color");
         day.find('.num').parent().removeClass("day_background_color");
       }

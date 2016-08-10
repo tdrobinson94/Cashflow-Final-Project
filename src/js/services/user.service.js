@@ -1,9 +1,10 @@
-function LoginService ($http, $cookies, SERVER){
+function UserService ($http, $cookies, SERVER){
 
   this.signup = signup;
   this.login = login;
   this.loggedIn = loggedIn;
   this.logOut = logOut;
+  this.getUser = getUser;
 
 
   function signup(user){
@@ -22,8 +23,13 @@ function LoginService ($http, $cookies, SERVER){
   function logOut(){
     $cookies.remove('access_token');
   }
+
+  function getUser(id) {
+    return $http.get(SERVER.URL + `/user/${id}`);
+  }
+
 }
 
-LoginService.$inject = ['$http', '$cookies', 'SERVER'];
+UserService.$inject = ['$http', '$cookies', 'SERVER'];
 
-export { LoginService };
+export { UserService };

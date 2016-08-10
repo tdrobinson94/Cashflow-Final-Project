@@ -1,11 +1,11 @@
 import $ from 'jquery';
 
-function SignUpController($http, SERVER, $state, LoginService) {
+function SignUpController($http, SERVER, $state, UserService) {
   let vm = this;
   vm.signup = signup;
 
   function signup(user){
-    LoginService.signup(user).then(function(res){
+    UserService.signup(user).then(function(res){
       console.log(res);
       $state.go('root.log-in');
     })
@@ -13,6 +13,6 @@ function SignUpController($http, SERVER, $state, LoginService) {
 
 }
 
-SignUpController.$inject = ['$http', 'SERVER', '$state', 'LoginService'];
+SignUpController.$inject = ['$http', 'SERVER', '$state', 'UserService'];
 
 export { SignUpController };

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-function LayoutController(LoginService, $rootScope){
+function LayoutController(UserService, $rootScope){
   let vm = this;
   vm.logOut = logOut;
 
@@ -12,7 +12,7 @@ function LayoutController(LoginService, $rootScope){
   });
 
   function logOut(){
-    LoginService.logOut();
+    UserService.logOut();
     vm.loggedIn = false;
   }
 
@@ -20,7 +20,7 @@ function LayoutController(LoginService, $rootScope){
     setNavigation();
     hamburgerHandler();
     linksHandler();
-    vm.loggedIn = LoginService.loggedIn();
+    vm.loggedIn = UserService.loggedIn();
   };
 
   init();
@@ -53,6 +53,6 @@ function LayoutController(LoginService, $rootScope){
 
 }
 
-LayoutController.$inject = ['LoginService', '$rootScope'];
+LayoutController.$inject = ['UserService', '$rootScope'];
 
 export { LayoutController };
