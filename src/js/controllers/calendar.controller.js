@@ -28,11 +28,6 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
       clickOutsideToClose:true,
       fullscreen: useFullScreen
     })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
     $scope.$watch(function() {
       return $mdMedia('xs') || $mdMedia('sm');
     }, function(wantsFullScreen) {
@@ -78,6 +73,7 @@ $('.month-selector, .year-selector').on('change', function(event){
   let renderMonth = function () {
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
     let currentMonth = $(document).find('#month').val();
+    let nextMonth = Number($(document).find('#month').val()) + 2;
     let currentYear = $(document).find('#year').val();
     let startOfMonth = new Date(currentYear, currentMonth , 1).getDay();
     let monthDays = MONTHS[$(document).find('#month').val()].days;
@@ -94,14 +90,23 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
      if(dayIndex > monthDays){
        day.find('.num').html(dayIndex - monthDays).parent().addClass("dead_month_color");
+       if(nextMonth == 13){
+         nextMonth = 1;
+         currentYear = Number(currentYear) + 1;
+       }
+       day.find('.num-date').html(nextMonth + '/' + (dayIndex - monthDays) + '/' + currentYear);
+        // console.log(nextMonth + '/' + (dayIndex - monthDays) + '/' + currentYear);
      } else {
        day.find('.num').html(dayIndex);
+      //  console.log(currentMonth + '/' + (dayIndex) + '/' + currentYear);
+       day.find('.num-date').html((Number(currentMonth) + 1) + '/' + (dayIndex) + '/' + currentYear);
      }
     })
   };
-
   function renderPrevMonthDays(){
     MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
+    let currentYear = $(document).find('#year').val();
+    let prevMonth = Number($(document).find('#month').val());
     let startOfMonth = new Date($(document).find('#year').val(), $(document).find('#month').val(), 1).getDay();
     let monthDays = MONTHS[$(document).find('#month').val()].days;
     let prevMonthDays = $(document).find('#month').val() == 0 ? 31 : MONTHS[$(document).find('#month').val() - 1].days;
@@ -111,11 +116,18 @@ $('.month-selector, .year-selector').on('change', function(event){
       let day = $(days[dayIndex]);
       if (startOfMonth > dayIndex){
         day.find('.num').html(prevDays[dayIndex]);
+        if(prevMonth == 0){
+          prevMonth = 12;
+          currentYear = Number(currentYear) - 1;
+        }
+        day.find('.num-date').html(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
+        // console.log(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
         day.find('.num').parent().addClass("dead_month_color");
         day.find('.num').parent().removeClass("day_background_color");
       }
     })
   }
+
 
   renderMonth();
   renderPrevMonthDays();

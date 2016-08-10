@@ -7,6 +7,8 @@ function DayViewController ($scope, $mdDialog){
     $mdDialog.cancel();
   };
 
+  
+
 
 }
 
