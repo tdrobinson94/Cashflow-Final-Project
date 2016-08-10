@@ -20,12 +20,16 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
 
   $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+    console.log(ev);
     $mdDialog.show({
       controller: DayViewController,
       templateUrl: 'templates/day-view.tpl.html',
       parent: angular.element(document.body),
       targetEvent: ev,
-      clickOutsideToClose:true,
+      locals: {
+        date: $(ev.target).find(".num-date").text()
+      },
+      clickOutsideToClose: true,
       fullscreen: useFullScreen
     })
     $scope.$watch(function() {
@@ -120,6 +124,7 @@ $('.month-selector, .year-selector').on('change', function(event){
           prevMonth = 12;
           currentYear = Number(currentYear) - 1;
         }
+//        day.data("date", prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
         day.find('.num-date').html(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
         // console.log(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
         day.find('.num').parent().addClass("dead_month_color");

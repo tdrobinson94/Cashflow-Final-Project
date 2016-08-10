@@ -1,0 +1,37 @@
+<md-dialog aria-label="Day View"  class="dialog-box" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 class="title">Account Form</h2>
+        <span flex></span>
+        <button class="close" ng-click="hide()">&times;</button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="content-box">
+          <input class="bank_name" placeholder="Bank Name" />
+          <select>
+            <option>
+              Account Type
+            </option>
+            <option>
+              Checking
+            </option>
+            <option>
+              Savings
+            </option>
+          </select>
+          <input class="account_title" placeholder="Account Title" />
+          <input class="account_balance" placeholder="Current Balance"  />
+        </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+        <button class="submit">Submit</button>
+      <!-- <button class="plus-button button fontawesome-plus-sign"></button>
+      <button class="minus-button button fontawesome-minus-sign"></button> -->
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,4 +1,7 @@
-function DayViewController ($scope, $mdDialog){
+function DayViewController ($scope, $mdDialog, date){
+
+  $scope.date = date;
+  
 
   $scope.hide = function() {
     $mdDialog.hide();
@@ -6,12 +9,12 @@ function DayViewController ($scope, $mdDialog){
   $scope.cancel = function() {
     $mdDialog.cancel();
   };
+  $scope.show = function(){
 
-  
-
+  }
 
 }
 
-DayViewController.$inject = ['$scope', '$mdDialog'];
+DayViewController.$inject = ['$scope', '$mdDialog', 'date'];
 
 export { DayViewController };
