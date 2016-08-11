@@ -41,12 +41,12 @@
         border: none;
         position: absolute;
         right: 10px;
-        bottom: 5px;
+        bottom: 10px;
         background: transparent;
         background: #00E676;
         color: white;
         outline: none;
-        font-size: 25px;
+        font-size: 20px;
         transition: opacity .2s ease-in-out;
       }
       .minus-button{
@@ -54,12 +54,12 @@
         border: none;
         position: absolute;
         left: 10px;
-        bottom: 5px;
+        bottom: 10px;
         background: transparent;
         background: #F44336;
         color: white;
         outline: none;
-        font-size: 25px;
+        font-size: 20px;
         transition: opacity .2s ease-in-out;
       }
       .button:hover{
