@@ -38,7 +38,7 @@ body{
       display: flex;
       justify-content: center;
       form{
-        
+
       }
     }
     .button-box{
@@ -50,6 +50,13 @@ body{
           background: #00B0FF;
           outline: none;
           margin: 20px;
+          transition: background .2s ease-in-out;
+        }
+      }
+      .calendar-button:hover{
+        button{
+          background: #00E676;
+          transition: background .2s ease-in-out;
         }
       }
     }

@@ -3,16 +3,6 @@ import $ from 'jquery';
 function ProfileController(UserService, $cookies) {
 
   let vm = this;
-  vm.enterAccountInfo = enterAccountInfo;
-  vm.accountInput = accountInput;
-  vm.account = [];
-  vm.showAccountInput = {
-		accountInput: false
-	};
-
-  function enterAccountInfo(account){
-		vm.showAccountInput.accountInput = true;
-	}
 
   // init();
   //

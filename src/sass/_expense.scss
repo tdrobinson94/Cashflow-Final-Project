@@ -6,7 +6,7 @@
     md-toolbar{
       .md-toolbar-tools{
         background-color: #00E676;
-        .modal-date{
+        .title{
           font-size: 25px;
           font-weight: 500;
         }
@@ -29,40 +29,40 @@
     md-dialog-content{
 
       .md-dialog-content{
-        .content-box{
-
+        text-align: center;
+        .question{
+          color: white;
+        }
+        .select{
+          margin: 20px 5px;
+          border: 1px solid #00b0ff;
+          height: 32px;
+          color: gray;
+        }
+        span{
+          color: white;
+        }
+        .input{
+          width: 55%;
+          border: 1px solid lightgray;
+          border-radius: 3px;
+          padding: 5px;
+          margin: 20px 5px;
         }
       }
     }
     md-dialog-actions{
-
-      .plus-button{
-        border-radius: 100%;
+      .submit{
+        background: #00B0FF;
         border: none;
-        position: absolute;
-        right: 10px;
-        bottom: 5px;
-        background: transparent;
-        color: #00E676;
+        border-radius: 3px;
+        padding: 5px 10px;
         outline: none;
-        font-size: 35px;
-        transition: opacity .2s ease-in-out;
+        color: white;
       }
-      .minus-button{
-        border-radius: 100%;
-        border: none;
-        position: absolute;
-        left: 10px;
-        bottom: 5px;
-        background: transparent;
-        color: #F44336;
-        outline: none;
-        font-size: 35px;
-        transition: opacity .2s ease-in-out;
-      }
-      .button:hover{
-        opacity: .7;
-        transition: opacity .2s ease-in-out;
+      .submit:hover{
+        background: #00E676;
+        transition: background .2s ease-in-out;
       }
     }
   }

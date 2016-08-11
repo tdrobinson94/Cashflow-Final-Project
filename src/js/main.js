@@ -22,6 +22,8 @@ import { ProfileController } from './controllers/profile.controller';
 import { DayViewController } from './controllers/day-view.controller';
 import { LoginController } from './controllers/login.controller';
 import { SignUpController } from './controllers/signup.controller';
+import { ExpenseController } from './controllers/expense.controller';
+import { IncomeController } from './controllers/income.controller';
 
 
 angular
@@ -38,5 +40,7 @@ angular
   .controller('ProfileController', ProfileController)
   .controller('LoginController', LoginController)
   .controller('SignUpController', SignUpController)
+  .controller('ExpenseController', ExpenseController)
+  .controller('IncomeController', IncomeController)
 
 ;

@@ -1,40 +1,23 @@
-
 <md-dialog aria-label="Day View"  class="dialog-box" ng-cloak>
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 class="modal-date">Date: {{ date }}</h2>
+        <h1 class="modal-date">{{ date }}</h1>
         <span flex></span>
-        <button class="close" ng-click="hide()">&times;</button>
+        <button class="close fontawesome-remove" ng-click="hide()"></button>
       </div>
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
         <div class="content-box">
-          <span class="beg-balance">Beginning Balance: </span><br />
 
-          <span class="end-balance">Ending Balance: </span>
-        </div>
-        <div ng-show="">
-          <div>
-            How much income are you expecting?
-          </div>
-          <select>
-            <option>Daily</option>
-            <option>Weekly</option>
-            <option>Bi-Weekly</option>
-            <option>Monthly</option>
-            <option>Semi-Annual</option>
-            <option>Annual</option>
-          </select>
-          <input placeholder="Income " />
         </div>
     </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <span flex></span>
-      <button class="plus-button button fontawesome-plus-sign"></button>
-      <button class="minus-button button fontawesome-minus-sign"></button>
+      <button class="plus-button button fontawesome-plus-sign " ng-click="showIncome($event)"></button>
+      <button class="minus-button button fontawesome-minus-sign" ng-click="showExpense($event)"></button>
     </md-dialog-actions>
   </form>
 </md-dialog>

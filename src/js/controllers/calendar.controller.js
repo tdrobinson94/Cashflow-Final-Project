@@ -4,6 +4,7 @@ import { MONTHS } from '../utilities/months.constant';
 import angular from 'angular';
 import { DayViewController } from './day-view.controller.js';
 
+
 function CalendarController($scope, $mdDialog, $mdMedia) {
 
   let vm = this;
@@ -28,6 +29,24 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
       locals: {
         date: $(ev.target).find(".num-date").text()
       },
+      clickOutsideToClose: true,
+      fullscreen: useFullScreen
+    })
+    $scope.$watch(function() {
+      return $mdMedia('xs') || $mdMedia('sm');
+    }, function(wantsFullScreen) {
+      $scope.customFullscreen = (wantsFullScreen === true);
+    });
+
+  };
+
+  $scope.showExpense = function(ev) {
+    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+    $mdDialog.show({
+      controller: ExpenseController,
+      templateUrl: 'templates/expense.tpl.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
       clickOutsideToClose: true,
       fullscreen: useFullScreen
     })

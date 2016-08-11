@@ -1,0 +1,38 @@
+<md-dialog aria-label="Expense"  class="dialog-box" ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h1 class="title">Income</h1>
+        <span flex></span>
+        <button class="close fontawesome-remove" ng-click="hide()"></button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+      <div class="question">
+        Are you expecting to recieve income?
+      </div><br />
+      <select class="select">
+        <option>Select Category</option>
+      </select>
+      <span>or</span>
+      <input class="input" placeholder="New Category" /><br />
+      <select class="select">
+        <option>Select Frequency</option>
+        <option>Once</option>
+        <option>Daily</option>
+        <option>Weekly</option>
+        <option>Bi-Weekly</option>
+        <option>Monthly</option>
+        <option>Semi-Annual</option>
+        <option>Annual</option>
+      </select><br />
+      <input class="input" placeholder="$0.00 " />
+    </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <button class="submit">Submit</button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
