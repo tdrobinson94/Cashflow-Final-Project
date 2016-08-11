@@ -1,3 +1,4 @@
+import $ from 'jquery';
 function run($rootScope, UserService, $state){
 
 
@@ -10,6 +11,7 @@ function run($rootScope, UserService, $state){
 
   $rootScope.$on('$stateChangeSuccess', function(event, toState){
     $rootScope.$broadcast('loginChange', UserService.loggedIn());
+      $('body').animate({scrollTop: '0px'}, 250);
   })
 
 }

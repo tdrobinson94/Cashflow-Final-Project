@@ -3,12 +3,12 @@ import $ from 'jquery';
 function LayoutController(UserService, $rootScope){
   let vm = this;
   vm.logOut = logOut;
+  vm.scrollTop = scrollTop;
 
   vm.setNavigation = setNavigation;
   vm.init = init;
   $rootScope.$on('loginChange', function(event, status){
     vm.loggedIn = status;
-    console.log('am i logged in?', vm.loggedIn);
   });
 
   function logOut(){
@@ -52,7 +52,7 @@ function LayoutController(UserService, $rootScope){
   $(window).resize(setNavigation)
 
   function scrollTop(){
-    window.scrollTo(0, 0);
+    $('body').animate({scrollTop: '0px'}, 250);
   }
 
 }
