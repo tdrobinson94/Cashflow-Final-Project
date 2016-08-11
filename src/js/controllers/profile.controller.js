@@ -3,19 +3,19 @@ import $ from 'jquery';
 function ProfileController(UserService, $cookies) {
 
   let vm = this;
+  vm.accountForm = false;
+  vm.showAccountForm = showAccountForm;
+  vm.hideAccountForm = hideAccountForm;
 
-  // init();
-  //
-  // function init(){
-  //   let user = $cookies.get('access_token')
-  //   getUser(id);
-  // }
-  //
-  // function getUser(id){
-  //   UserService.getUser(id).then(function(res){
-  //     console.log(res);
-  //   })
-  // }
+  function showAccountForm(){
+    vm.accountForm = true;
+  }
+
+  function hideAccountForm(){
+    vm.accountForm = false;
+  }
+
+
 
 }
 

@@ -51,6 +51,10 @@ function LayoutController(UserService, $rootScope){
 
   $(window).resize(setNavigation)
 
+  function scrollTop(){
+    window.scrollTo(0, 0);
+  }
+
 }
 
 LayoutController.$inject = ['UserService', '$rootScope'];

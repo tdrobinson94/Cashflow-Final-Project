@@ -37,26 +37,122 @@ body{
       width: 100%;
       display: flex;
       justify-content: center;
-      form{
-
+      flex-wrap: wrap;
+      .account-setup{
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100px;
+        border-radius: 3px;
+        background: #00B0FF;
+        color: white;
+        transition: background .2s ease-in-out;
       }
-    }
-    .button-box{
-      .calendar-button{
-        button{
-          border: none;
+      .account-setup:hover{
+        background: #00E676;
+        transition: background .2s ease-in-out;
+      }
+      .input-box{
+        width: 100%;
+        margin: 20px;
+        div{
+          width: 40%;
+          border: 1px solid lightgray;
+          padding: 20px;
           border-radius: 3px;
-          color: white;
-          background: #00B0FF;
-          outline: none;
-          margin: 20px;
-          transition: background .2s ease-in-out;
+          box-shadow: 1px 1px 10px lightgray;
+          form{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 70%;
+            .input{
+              width: 90%;
+              margin: 15px;
+              padding: 5px;
+            }
+            .account_type{
+              width: 50%;
+              margin: 15px;
+              border: 1px solid #00b0ff;
+              background: white;
+              color: gray;
+              height: 32px;
+            }
+            .button{
+              border: none;
+              outline: none;
+              border-radius: 3px;
+              padding: 5px 10px;
+              background: #00b0ff;
+              color: white;
+              margin: 5px;
+              transition: opacity .2s ease-in-out;
+            }
+            .cancel{
+              background: red;
+            }
+            .button:hover{
+              opacity: .5;
+              transition: opacity .2s ease-in-out;
+            }
+          }
         }
       }
-      .calendar-button:hover{
-        button{
-          background: #00E676;
-          transition: background .2s ease-in-out;
+    }
+    .account_display_box{
+      width: 100%;
+      margin: 20px auto;
+      .edit{
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        background: red;
+        outline: none;
+        padding: 5px 10px;
+        transition: opacity .2s ease-in-out;
+      }
+      .edit:hover{
+        opacity: .5;
+        transition: opacity .2s ease-in-out;
+      }
+      .account_display{
+        position: relative;
+        width: 60%;
+        border: 1px solid lightgray;
+        padding: 40px 20px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 10px lightgray;
+        span{
+          width: 90%;
+          border-bottom: 1px solid lightgray;
+          padding: 5px;
+          margin: 15px;
+        }
+        .button-box{
+          .calendar-button{
+            button{
+              border: none;
+              border-radius: 3px;
+              color: white;
+              background: #00B0FF;
+              outline: none;
+              margin: 15px;
+              padding: 5px 10px;
+              transition: background .2s ease-in-out;
+            }
+          }
+          .calendar-button:hover{
+            button{
+              background: #00E676;
+              transition: background .2s ease-in-out;
+            }
+          }
         }
       }
     }

@@ -4,11 +4,44 @@
 </div>
 <div class="profile-content">
   <div>
-      <form>
-      </form>
+      <button class="account-setup" ng-click="vm.showAccountForm()">Set-up Account Info</button>
+      <!-- <button class="account-edit">Edit</button> -->
+      <div class="input-box" ng-show="vm.accountForm">
+        <div>
+          <form>
+            <h3>Account Info Form</h3>
+            <input class="bank_name input" placeholder="Bank Name" />
+            <select class="account_type">
+              <option>
+                Account Type
+              </option>
+              <option>
+                Checking
+              </option>
+              <option>
+                Savings
+              </option>
+            </select>
+            <input class="account_title input" placeholder="Account Title" />
+            <input class="account_balance input" placeholder="Current Balance"  />
+            <button class="submit button">Submit</button>
+            <button class="cancel button" ng-click="vm.hideAccountForm()">Cancel</button>
+          </form>
+        </div>
+      </div>
   </div>
-  <div class="button-box">
-    <a class="calendar-button" href="/#/calendar"><button>My Forcasting Calendar</button></a>
+  <div class="account_display_box">
+    <div class="account_display">
+      <button class="edit">Edit</button>
+      <h3>Account Info Form</h3>
+      <span>Bank Name</span><br />
+      <span>Account Type</span><br />
+      <span>Account Name</span><br />
+      <span>Account Balance</span>
+      <div class="button-box">
+        <a class="calendar-button" href="/#/calendar"><button>My Forcasting Calendar</button></a>
+      </div>
+    </div>
   </div>
 
 </div>

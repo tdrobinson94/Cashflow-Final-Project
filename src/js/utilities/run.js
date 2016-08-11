@@ -11,6 +11,7 @@ function run($rootScope, UserService, $state){
   $rootScope.$on('$stateChangeSuccess', function(event, toState){
     $rootScope.$broadcast('loginChange', UserService.loggedIn());
   })
+
 }
 
 run.$inject = ['$rootScope', 'UserService', '$state'];

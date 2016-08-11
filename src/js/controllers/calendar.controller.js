@@ -40,24 +40,6 @@ function CalendarController($scope, $mdDialog, $mdMedia) {
 
   };
 
-  $scope.showExpense = function(ev) {
-    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-    $mdDialog.show({
-      controller: ExpenseController,
-      templateUrl: 'templates/expense.tpl.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      clickOutsideToClose: true,
-      fullscreen: useFullScreen
-    })
-    $scope.$watch(function() {
-      return $mdMedia('xs') || $mdMedia('sm');
-    }, function(wantsFullScreen) {
-      $scope.customFullscreen = (wantsFullScreen === true);
-    });
-
-  };
-
 
 $(document).find('#month').html(`
   <option value="${month}" selected>${MONTHS[month].name}</option>

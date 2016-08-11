@@ -37,27 +37,29 @@
     md-dialog-actions{
 
       .plus-button{
-        border-radius: 100%;
+        border-radius: 3px;
         border: none;
         position: absolute;
         right: 10px;
         bottom: 5px;
         background: transparent;
-        color: #00E676;
+        background: #00E676;
+        color: white;
         outline: none;
-        font-size: 35px;
+        font-size: 25px;
         transition: opacity .2s ease-in-out;
       }
       .minus-button{
-        border-radius: 100%;
+        border-radius: 3px;
         border: none;
         position: absolute;
         left: 10px;
         bottom: 5px;
         background: transparent;
-        color: #F44336;
+        background: #F44336;
+        color: white;
         outline: none;
-        font-size: 35px;
+        font-size: 25px;
         transition: opacity .2s ease-in-out;
       }
       .button:hover{
