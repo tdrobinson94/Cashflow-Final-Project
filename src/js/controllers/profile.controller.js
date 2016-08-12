@@ -26,9 +26,9 @@ function ProfileController($cookies, ProfileService) {
   function addAccount(account){
     ProfileService.addAccount(account).then(function(res){
       console.log(res);
-      console.log(account);
       vm.accountForm = false;
       getAccountInfo();
+      console.log(getAccountInfo());
     })
   }
 
