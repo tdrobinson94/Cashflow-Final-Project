@@ -39,8 +39,8 @@
     <h1 class="accounts-title">All Accounts</h1>
     <div class="account_display" ng-repeat="account in vm.accounts | limitTo: 5: 0">
       <div class="edit-box">
-        <button class="edit button">Edit</button>
-        <button class="delete button" ng-click="vm.deleteAccount(account.id)">Delete</button>
+        <button class="edit button fontawesome-pencil"></button>
+        <button class="delete button fontawesome-trash" ng-click="vm.deleteAccount(account.id)"></button>
       </div>
       <h3>{{ account.account_title || 'Account Name' }}</h3>
       <span>Bank: {{ account.bank || 'Bank name' }}</span><br />

@@ -31,7 +31,6 @@ function ProfileController($cookies, ProfileService, UserService) {
       vm.accountForm = false;
       getAccountInfo();
       console.log(getAccountInfo());
-      // $(document).find('.account_form').empty().append();
       vm.account = {};
     })
   }
