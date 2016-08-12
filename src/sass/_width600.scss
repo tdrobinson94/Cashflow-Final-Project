@@ -32,7 +32,7 @@ body{
     div{
       a{
         margin: 5px;
-        font-size: 11px;
+        font-size: 13px;
       }
       .navbar-button{
         margin: 5px;
@@ -96,6 +96,78 @@ body{
         }
         .minus-button{
           visibility: hidden;
+        }
+      }
+    }
+  }
+  .contact-header{
+    top: 60px;
+    height: 60px;
+    .calendar-button-box{
+      .calendar-button{
+      }
+      .calendar-button:hover{
+      }
+    }
+    .users-name{
+    }
+  }
+  .profile-content{
+    top: 160px;
+    div{
+      .account-setup{
+        width: 80px;
+      }
+      .account-setup:hover{
+      }
+      .input-box{
+        margin: 10px;
+        .cancel-box{
+          margin-bottom: 10px;
+          .cancel{
+          }
+          .cancel:hover{
+          }
+        }
+        div{
+          width: 80%;
+          padding: 10px;;
+          form{
+            width: 90%;
+            .input{
+              width: 90%;
+            }
+            .account_type{
+            }
+            .button{
+            }
+            .button:hover{
+            }
+          }
+        }
+      }
+    }
+    .account_display_box{
+      margin: 10px auto;
+      .accounts-title{
+      }
+      .account_display{
+        width: 80%;
+        margin: 10px;
+        .edit-box{
+          .edit{
+          }
+          .edit:hover{
+          }
+          .delete{
+          }
+          .delete:hover{
+          }
+        }
+        span{
+          margin: 10px;
+        }
+        .balance{
         }
       }
     }

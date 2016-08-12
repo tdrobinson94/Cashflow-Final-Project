@@ -35,10 +35,6 @@ body{
         transition: color .2s ease-in-out;
       }
     }
-    img{
-      width: 100px;
-      border-radius: 100%;
-    }
     .users-name{
       color: white;
     }
@@ -94,7 +90,7 @@ body{
           }
         }
         div{
-          width: 40%;
+          width: 60%;
           border: 1px solid lightgray;
           padding: 20px;
           border-radius: 3px;
@@ -103,7 +99,7 @@ body{
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            width: 70%;
+            width: 90%;
             .input{
               width: 90%;
               margin: 15px;
