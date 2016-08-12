@@ -11,39 +11,30 @@ body{
   width: 100%;
   min-height: 285px;
   position: relative;
-  .calendar-button-box{
-    position: absolute;
-    right: 3%;
-    top: 5px;
-    width: 100px;
-    .calendar-button{
-      button{
-        border: none;
-        border-radius: 3px;
-        color: white;
-        background: #00B0FF;
-        outline: none;
-        margin: 15px;
-        padding: 5px 10px;
-        transition: background .2s ease-in-out;
-      }
-    }
-    .calendar-button:hover{
-      button{
-        opacity: .5;
-        transition: opacity .2s ease-in-out;
-      }
-    }
-  }
   .contact-header{
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     top: 60px;
     height: 80px;
     background-color: #00E676;
     padding: 10px 0px;
+    .calendar-button-box{
+      position: absolute;
+      left: 2%;
+      // top: 20px;
+      .calendar-button{
+        text-decoration: none;
+        color: white;
+        transition: opacity .2s ease-in-out;
+      }
+      .calendar-button:hover{
+        color: #00b0ff;
+        transition: color .2s ease-in-out;
+      }
+    }
     img{
       width: 100px;
       border-radius: 100%;

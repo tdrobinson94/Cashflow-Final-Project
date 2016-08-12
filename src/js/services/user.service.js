@@ -4,7 +4,13 @@ function UserService ($http, $cookies, SERVER){
   this.login = login;
   this.loggedIn = loggedIn;
   this.logOut = logOut;
+  this.getUser = getUser;
 
+  let token = $cookies.get('access_token');
+
+  let config = {
+    headers: { 'Authorization': `Bearer ${token}` }
+  };
 
   function signup(user){
     return $http.post(SERVER.URL + 'signup', user);
@@ -23,7 +29,9 @@ function UserService ($http, $cookies, SERVER){
     $cookies.remove('access_token');
   }
 
-
+  function getUser(user){
+    return $http.get(SERVER.URL + 'accounts', user, config)
+  }
 
 }
 
