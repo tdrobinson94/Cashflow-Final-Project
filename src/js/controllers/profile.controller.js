@@ -38,6 +38,7 @@ function ProfileController($cookies, ProfileService) {
       console.log(res);
       vm.accounts = res.data.reverse();
     })
+    // $scope.quantity = 5;
   }
 
 

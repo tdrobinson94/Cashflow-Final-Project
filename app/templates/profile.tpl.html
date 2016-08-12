@@ -1,12 +1,12 @@
 <div class="contact-header">
+  <div class="calendar-button-box">
+    <a class="calendar-button" href="/#/calendar"><button>My Forcasting Calendar</button></a>
+  </div>
   <!-- <img src="./images/default-contact.png" /> -->
   <h2 class="users-name">Hey, </h2>
 </div>
 <div class="profile-content">
   <div>
-    <div class="button-box">
-      <a class="calendar-button" href="/#/calendar"><button>My Forcasting Calendar</button></a>
-    </div>
       <button class="account-setup" ng-click="vm.showAccountForm()">Set-up Account Info</button><br />
       <div class="input-box" ng-show="vm.accountForm">
         <div class="cancel-box">
@@ -15,8 +15,8 @@
         <div>
           <form ng-submit="vm.addAccount(account)">
             <h3>Account Info Form</h3>
-            <input class="bank_name input" placeholder="Bank Name" ng-model="account.bank"/>
-            <select name="account_type" class="account_type" ng-model="account.account_type">
+            <input class="bank_name input" placeholder="Bank Name" ng-model="account.bank" required/>
+            <select name="account_type" class="account_type" ng-model="account.account_type" required>
               <option value="" hidden>
                 Account Type
               </option>
@@ -27,16 +27,17 @@
                 Savings
               </option>
             </select>
-            <input class="account_title input" placeholder="Account Title" ng-model="account.account_title"/>
-            <input class="account_balance input" placeholder="Current Balance" ng-model="account.account_balance" />
+            <input class="account_title input" placeholder="Account Title" ng-model="account.account_title" required/>
+            <input class="account_balance input" placeholder="Current Balance" ng-model="account.account_balance" required/>
             <button class="submit button">Submit</button>
             <!-- <button class="cancel button" ng-click="vm.hideAccountForm()">Cancel</button> -->
           </form>
         </div>
       </div>
   </div>
-  <div class="account_display_box" ng-repeat="account in vm.accounts">
-    <div class="account_display">
+  <div class="account_display_box">
+    <h1 class="accounts-title">All Accounts</h1>
+    <div class="account_display" ng-repeat="account in vm.accounts | limitTo: 5: 0">
       <div class="edit-box">
         <button class="edit button">Edit</button>
         <button class="delete button">Delete</button>

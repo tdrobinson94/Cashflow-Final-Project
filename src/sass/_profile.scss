@@ -11,6 +11,30 @@ body{
   width: 100%;
   min-height: 285px;
   position: relative;
+  .calendar-button-box{
+    position: absolute;
+    right: 3%;
+    top: 5px;
+    width: 100px;
+    .calendar-button{
+      button{
+        border: none;
+        border-radius: 3px;
+        color: white;
+        background: #00B0FF;
+        outline: none;
+        margin: 15px;
+        padding: 5px 10px;
+        transition: background .2s ease-in-out;
+      }
+    }
+    .calendar-button:hover{
+      button{
+        opacity: .5;
+        transition: opacity .2s ease-in-out;
+      }
+    }
+  }
   .contact-header{
     position: absolute;
     width: 100%;
@@ -38,26 +62,6 @@ body{
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      .button-box{
-        .calendar-button{
-          button{
-            border: none;
-            border-radius: 3px;
-            color: white;
-            background: #00B0FF;
-            outline: none;
-            margin: 15px;
-            padding: 5px 10px;
-            transition: background .2s ease-in-out;
-          }
-        }
-        .calendar-button:hover{
-          button{
-            background: #00E676;
-            transition: background .2s ease-in-out;
-          }
-        }
-      }
       .account-setup{
         border: none;
         outline: none;
@@ -145,39 +149,9 @@ body{
     .account_display_box{
       width: 100%;
       margin: 20px auto;
-      .edit-box{
-        position: absolute;
-        top: 2%;
-        right: 1%;
-        width: 150px;
-        .edit{
-          border: none;
-          border-radius: 3px;
-          color: white;
-          background: #37474F;
-          outline: none;
-          padding: 5px 10px;
-          transition: opacity .2s ease-in-out;
-          margin: 5px;
-        }
-        .edit:hover{
-          opacity: .5;
-          transition: opacity .2s ease-in-out;
-        }
-        .delete{
-          border: none;
-          border-radius: 3px;
-          color: white;
-          background: red;
-          outline: none;
-          padding: 5px 10px;
-          transition: opacity .2s ease-in-out;
-          margin: 5px;
-        }
-        .delete:hover{
-          opacity: .5;
-          transition: opacity .2s ease-in-out;
-        }
+      .accounts-title{
+        width: 100%;
+        text-align: center;
       }
       .account_display{
         position: relative;
@@ -186,6 +160,41 @@ body{
         padding: 40px 20px;
         border-radius: 3px;
         box-shadow: 1px 1px 10px lightgray;
+        margin: 20px;
+        .edit-box{
+          position: absolute;
+          top: 2%;
+          right: 1%;
+          width: 150px;
+          .edit{
+            border: none;
+            border-radius: 3px;
+            color: white;
+            background: #37474F;
+            outline: none;
+            padding: 5px 10px;
+            transition: opacity .2s ease-in-out;
+            margin: 5px;
+          }
+          .edit:hover{
+            opacity: .5;
+            transition: opacity .2s ease-in-out;
+          }
+          .delete{
+            border: none;
+            border-radius: 3px;
+            color: white;
+            background: red;
+            outline: none;
+            padding: 5px 10px;
+            transition: opacity .2s ease-in-out;
+            margin: 5px;
+          }
+          .delete:hover{
+            opacity: .5;
+            transition: opacity .2s ease-in-out;
+          }
+        }
         span{
           width: 90%;
           border-bottom: 1px solid lightgray;
