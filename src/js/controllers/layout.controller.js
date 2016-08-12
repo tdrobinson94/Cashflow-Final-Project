@@ -4,6 +4,7 @@ function LayoutController(UserService, $state, $rootScope){
   let vm = this;
   vm.logOut = logOut;
   vm.scrollTop = scrollTop;
+  vm.loggedIn = false;
 
   vm.setNavigation = setNavigation;
   vm.init = init;
@@ -21,6 +22,7 @@ function LayoutController(UserService, $state, $rootScope){
     setNavigation();
     hamburgerHandler();
     linksHandler();
+    vm.loggedIn = UserService.loggedIn();
   };
 
   init();

@@ -5,12 +5,13 @@ import angular from 'angular';
 import { DayViewController } from './day-view.controller.js';
 
 
-function CalendarController($scope, $mdDialog, $mdMedia) {
+function CalendarController($scope, $mdDialog, $mdMedia, ProfileService, $cookies) {
 
   let vm = this;
   vm.next = next;
   vm.prev = prev;
   vm.current = current;
+  vm.accounts = []
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -171,8 +172,17 @@ $('.month-selector').change();
     }
   }
 
+  function getAccountInfo(){
+    let user_id = $cookies.get('user_id');
+    ProfileService.getAccountInfo(user_id).then(function(res){
+      console.log(res);
+      vm.accounts = res.data;
+    })
+  }
+  getAccountInfo();
+
 }
 
-CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia'];
+CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia', 'ProfileService', '$cookies'];
 
 export { CalendarController };
