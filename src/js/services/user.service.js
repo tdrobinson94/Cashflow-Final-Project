@@ -4,7 +4,6 @@ function UserService ($http, $cookies, SERVER){
   this.login = login;
   this.loggedIn = loggedIn;
   this.logOut = logOut;
-  // this.getUser = getUser;
 
 
   function signup(user){
@@ -24,9 +23,7 @@ function UserService ($http, $cookies, SERVER){
     $cookies.remove('access_token');
   }
 
-  // function getUser(id) {
-  //   return $http.get(SERVER.URL + `/user/${id}`);
-  // }
+
 
 }
 

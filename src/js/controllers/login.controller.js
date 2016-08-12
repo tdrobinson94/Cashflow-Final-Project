@@ -7,6 +7,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
     UserService.login(user).then(function(res){
       console.log(res);
       $cookies.put('access_token', res.data.access_token);
+      $cookies.put('user_id', res.data.id)
       $state.go('root.profile');
     })
   }

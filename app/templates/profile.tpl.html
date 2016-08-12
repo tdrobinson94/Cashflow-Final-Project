@@ -4,43 +4,47 @@
 </div>
 <div class="profile-content">
   <div>
-      <button class="account-setup" ng-click="vm.showAccountForm()">Set-up Account Info</button>
-      <!-- <button class="account-edit">Edit</button> -->
+    <div class="button-box">
+      <a class="calendar-button" href="/#/calendar"><button>My Forcasting Calendar</button></a>
+    </div>
+      <button class="account-setup" ng-click="vm.showAccountForm()">Set-up Account Info</button><br />
       <div class="input-box" ng-show="vm.accountForm">
+        <div class="cancel-box">
+          <button class="cancel button" ng-click="vm.hideAccountForm()" ng-show="vm.accountForm">Cancel</button>
+        </div>
         <div>
-          <form>
+          <form ng-submit="vm.addAccount(account)">
             <h3>Account Info Form</h3>
-            <input class="bank_name input" placeholder="Bank Name" />
-            <select class="account_type">
-              <option>
+            <input class="bank_name input" placeholder="Bank Name" ng-model="account.bank"/>
+            <select name="account_type" class="account_type" ng-model="account.account_type">
+              <option value="" hidden>
                 Account Type
               </option>
-              <option>
+              <option value="Checking">
                 Checking
               </option>
-              <option>
+              <option value="Savings">
                 Savings
               </option>
             </select>
-            <input class="account_title input" placeholder="Account Title" />
-            <input class="account_balance input" placeholder="Current Balance"  />
-            <button class="submit button" ng-submit="">Submit</button>
-            <button class="cancel button" ng-click="vm.hideAccountForm()">Cancel</button>
+            <input class="account_title input" placeholder="Account Title" ng-model="account.account_title"/>
+            <input class="account_balance input" placeholder="Current Balance" ng-model="account.account_balance" />
+            <button class="submit button">Submit</button>
+            <!-- <button class="cancel button" ng-click="vm.hideAccountForm()">Cancel</button> -->
           </form>
         </div>
       </div>
   </div>
-  <div class="account_display_box">
+  <div class="account_display_box" ng-repeat="account in vm.accounts">
     <div class="account_display">
-      <button class="edit">Edit</button>
-      <h3>Account Info Form</h3>
-      <span>Bank Name</span><br />
-      <span>Account Type</span><br />
-      <span>Account Name</span><br />
-      <span>Account Balance</span>
-      <div class="button-box">
-        <a class="calendar-button" href="/#/calendar"><button>My Forcasting Calendar</button></a>
+      <div class="edit-box">
+        <button class="edit button">Edit</button>
+        <button class="delete button">Delete</button>
       </div>
+      <h3>{{ account.account_title || 'Account Name' }}</h3>
+      <span>{{ account.bank || 'Bank name' }}</span><br />
+      <span>{{ account.account_type || 'Account Type' }}</span><br />
+      <span class="balance">{{ account.account_balance || 'Account Balance'}}</span>
     </div>
   </div>
 

@@ -12,6 +12,7 @@ import { run } from './utilities/run';
 // import services
 import { CalendarService } from './services/calendar.service';
 import { UserService } from './services/user.service';
+import { ProfileService } from './services/profile.service';
 
 
 // import controllers
@@ -33,6 +34,7 @@ angular
   .run(run)
   .service('CalendarService', CalendarService)
   .service('UserService', UserService)
+  .service('ProfileService', ProfileService)
   .controller('DayViewController', DayViewController)
   .controller('CalendarController', CalendarController)
   .controller('HomeController', HomeController)
