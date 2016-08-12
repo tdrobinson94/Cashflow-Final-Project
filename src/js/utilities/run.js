@@ -10,8 +10,9 @@ function run($rootScope, UserService, $state){
   })
 
   $rootScope.$on('$stateChangeSuccess', function(event, toState){
+    console.log("broadcasting login change");
     $rootScope.$broadcast('loginChange', UserService.loggedIn());
-      $('body').animate({scrollTop: '0px'}, 250);
+    $('body').animate({scrollTop: '0px'}, 250);
   })
 
 }

@@ -6,11 +6,15 @@ function UserService ($http, $cookies, SERVER){
   this.logOut = logOut;
   this.getUser = getUser;
 
-  let token = $cookies.get('access_token');
+  function getToken () {
+    let token = $cookies.get('access_token');
 
-  let config = {
-    headers: { 'Authorization': `Bearer ${token}` }
-  };
+    let config = {
+      headers: { 'Authorization': `Bearer ${token}` }
+    };
+    return config;
+  }
+
 
   function signup(user){
     return $http.post(SERVER.URL + 'signup', user);
@@ -31,7 +35,7 @@ function UserService ($http, $cookies, SERVER){
   }
 
   function getUser(){
-    return $http.get(SERVER.URL + 'profile', config)
+    return $http.get(SERVER.URL + 'profile', getToken());
   }
 
 }

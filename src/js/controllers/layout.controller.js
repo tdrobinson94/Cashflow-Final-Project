@@ -1,26 +1,26 @@
 import $ from 'jquery';
 
-function LayoutController(UserService, $rootScope){
+function LayoutController(UserService, $state, $rootScope){
   let vm = this;
   vm.logOut = logOut;
   vm.scrollTop = scrollTop;
 
   vm.setNavigation = setNavigation;
   vm.init = init;
+
   $rootScope.$on('loginChange', function(event, status){
     vm.loggedIn = status;
   });
 
   function logOut(){
     UserService.logOut();
-    vm.loggedIn = false;
+    $state.go("root.home");
   }
 
   function init() {
     setNavigation();
     hamburgerHandler();
     linksHandler();
-    vm.loggedIn = UserService.loggedIn();
   };
 
   init();
@@ -57,6 +57,6 @@ function LayoutController(UserService, $rootScope){
 
 }
 
-LayoutController.$inject = ['UserService', '$rootScope'];
+LayoutController.$inject = ['UserService', '$state', '$rootScope'];
 
 export { LayoutController };
