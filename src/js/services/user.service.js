@@ -29,8 +29,8 @@ function UserService ($http, $cookies, SERVER){
     $cookies.remove('access_token');
   }
 
-  function getUser(user){
-    return $http.get(SERVER.URL + 'accounts', user, config)
+  function getUser(){
+    return $http.get(SERVER.URL + 'profile', config)
   }
 
 }

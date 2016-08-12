@@ -8,13 +8,14 @@ function ProfileController($cookies, ProfileService, UserService) {
   vm.hideAccountForm = hideAccountForm;
   vm.addAccount = addAccount;
   vm.deleteAccount = deleteAccount;
+  vm.getUser = getUser;
   vm.accounts = [];
 
   init();
 
   function init(){
     getAccountInfo();
-    // getUser();
+    getUser();
   }
 
   function showAccountForm(){
@@ -51,11 +52,11 @@ function ProfileController($cookies, ProfileService, UserService) {
     })
   }
 
-  // function getUser(){
-  //   UserService.getUser(user).then(function(res){
-  //     console.log(res);
-  //   })
-  // }
+  function getUser(){
+    UserService.getUser().then(function(res){
+      $(document).find('.greeting').html('Hey, ' + res.data.firstname + ' ' + res.data.lastname);
+    })
+  }
 
 }
 
