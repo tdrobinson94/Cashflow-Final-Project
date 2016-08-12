@@ -10,6 +10,7 @@ function ProfileController($cookies, ProfileService, UserService) {
   vm.deleteAccount = deleteAccount;
   vm.getUser = getUser;
   vm.accounts = [];
+  vm.userInfo = {};
 
   init();
 
@@ -54,7 +55,7 @@ function ProfileController($cookies, ProfileService, UserService) {
 
   function getUser(){
     UserService.getUser().then(function(res){
-      $(document).find('.greeting').html('Hey, ' + res.data.firstname + ' ' + res.data.lastname);
+      vm.userInfo = res.data;
     })
   }
 

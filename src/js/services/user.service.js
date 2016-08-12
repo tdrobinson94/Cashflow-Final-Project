@@ -27,6 +27,7 @@ function UserService ($http, $cookies, SERVER){
 
   function logOut(){
     $cookies.remove('access_token');
+    $cookies.remove('user_id');
   }
 
   function getUser(){
