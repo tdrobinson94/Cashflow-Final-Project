@@ -4,6 +4,7 @@
   </div>
   <!-- <img src="./images/default-contact.png" /> -->
   <h2 class="greeting">Hey, {{ vm.userInfo.firstname }}</h2>
+  <button class="settings-button fontawesome-cog"> Settings</button>
 </div>
 <div class="profile-content">
   <div>
@@ -39,7 +40,7 @@
     <h1 class="accounts-title">All Accounts</h1>
     <div class="account_display" ng-repeat="account in vm.accounts | limitTo: 5: 0">
       <div class="edit-box">
-        <button class="edit button fontawesome-pencil"></button>
+        <!-- <button class="edit button fontawesome-pencil"></button> -->
         <button class="delete button fontawesome-trash" ng-click="vm.deleteAccount(account.id)"></button>
       </div>
       <h3>{{ account.account_title || 'Account Name' }}</h3>

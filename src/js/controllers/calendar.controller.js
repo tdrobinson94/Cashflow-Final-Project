@@ -181,6 +181,10 @@ $('.month-selector').change();
   }
   getAccountInfo();
 
+  // $(document).find('#account').append(`
+  //   `)
+
+
 }
 
 CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia', 'ProfileService', '$cookies'];

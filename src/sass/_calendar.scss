@@ -24,28 +24,44 @@ body{
       height: 50px;
       display: flex;
       align-items: center;
-      .selector{
-        height: 45px;
+      // justify-content: space-between;
+      .date-selectors{
+        // width: 315px;
+        display: block;
+        .selector{
+          height: 45px;
+          width: 200px;
+          margin-left: 5px;
+          background-color: transparent;
+          border: 1px solid #00B0FF;
+          outline: none;
+          font-size: 30px;
+          color: white;
+          transition: all .2s ease-in-out;
+        }
+        .selector:hover{
+          color: #00B0FF;
+          background-color: #455A64;
+          transition: all .2s ease-in-out;
+        }
+        .year-selector{
+          width: 100px;
+        }
+      }
+      .account_selector{
+        // height: 45px;
         width: 200px;
         margin-left: 5px;
         background-color: transparent;
         border: 1px solid #00B0FF;
         outline: none;
-        font-size: 30px;
+        font-size: 20px;
         color: white;
         transition: all .2s ease-in-out;
       }
-      .selector:hover{
-        color: #00B0FF;
-        background-color: #455A64;
-        transition: all .2s ease-in-out;
-      }
-      .year-selector{
-        width: 100px;
-      }
       .button-box{
         position: absolute;
-        right: 2%;
+        right: 1%;
         .button{
           border: none;
           outline: none;

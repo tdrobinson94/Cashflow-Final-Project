@@ -69,9 +69,11 @@ body{
     top: 60px;
     .select-form{
       height: 40px;
-      .selector{
-        height: 35px;
-        font-size: 25px;
+      .date-selectors{
+        .selector{
+          height: 35px;
+          font-size: 25px;
+        }
       }
     }
     .day-of-week{

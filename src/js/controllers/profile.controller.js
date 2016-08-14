@@ -32,7 +32,7 @@ function ProfileController($cookies, ProfileService, UserService) {
       console.log(res);
       vm.accountForm = false;
       getAccountInfo();
-      console.log(getAccountInfo());
+      // console.log(getAccountInfo());
       vm.account = {};
     })
   }

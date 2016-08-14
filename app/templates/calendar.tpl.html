@@ -1,10 +1,16 @@
       <div class="month">
         <form class="select-form">
-          <select name="select" class="month-selector selector" id="month">
-          </select>
-          <select name="select" class="year-selector selector" id="year">
-          </select>
+          <div class="date-selectors">
+            <select name="select" class="month-selector selector" id="month">
+            </select>
+            <select name="select" class="year-selector selector" id="year">
+            </select>
+          </div>
           <!-- {{vm.accounts}} -->
+          <!-- <select class="account_selector" id="account">
+            <option selected>Choose Account</option>
+            <option>{{ vm.accounts[0].account_title }}</option>
+          </select> -->
           <div class="button-box">
             <button class="prev button" ng-click="vm.prev()">Prev</button>
             <button class="current button" ng-click="vm.current()">Today</button>
