@@ -175,7 +175,8 @@ $('.month-selector').change();
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
-      console.log(res);
+      console.log(res.data);
+      console.log(res.data[0].created_at);
       vm.accounts = res.data;
     })
   }

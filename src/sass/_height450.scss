@@ -63,13 +63,15 @@ body{
     top: 60px;
     .select-form{
       height: 30px;
-      .selector{
-        height: 25px;
-        width: 100px;;
-        font-size: 15px;
-      }
-      .year-selector{
-        width: 75px;
+      .date-selectors{
+        .selector{
+          height: 25px;
+          width: 100px;;
+          font-size: 15px;
+        }
+        .year-selector{
+          width: 75px;
+        }
       }
     }
     .day-of-week{
