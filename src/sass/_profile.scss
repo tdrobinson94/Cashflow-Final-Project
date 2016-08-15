@@ -162,11 +162,12 @@ body{
         margin: 20px;
         .edit-box{
           position: absolute;
-          display: flex;
+          display: none;
           justify-content: flex-end;
           top: 2%;
           right: 1%;
           width: 100px;
+          transition: display .2s ease-in-out;
           .edit{
             border: none;
             border-radius: 3px;
@@ -204,6 +205,13 @@ body{
         }
         .balance{
           display: none;
+        }
+      }
+      .account_display:hover{
+        .edit-box{
+          display: flex;
+          justify-content: flex-end;
+          transition: dipslay .2s ease-in-out;
         }
       }
     }
