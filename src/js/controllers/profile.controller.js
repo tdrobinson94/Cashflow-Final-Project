@@ -34,6 +34,7 @@ function ProfileController($cookies, ProfileService, UserService) {
       getAccountInfo();
       // console.log(getAccountInfo());
       vm.account = {};
+
     })
   }
 

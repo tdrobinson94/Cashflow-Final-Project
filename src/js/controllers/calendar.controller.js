@@ -175,17 +175,16 @@ $('.month-selector').change();
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
-      console.log(res.data);
-      console.log(res.data[0].created_at);
-      vm.accounts = res.data;
+      // console.log(res.data[0]);
+      // let splitArray = res.data[0].created_at.split(' ');
+      // let splitDate = splitArray[0].split('-');
+      // let accountDate = splitDate[1].slice(1,9) + '/' + splitDate[2] + '/' + splitDate[0];
+      // vm.accountsDate = accountDate;
+      // console.log(res.data[0].created_at);
+      // console.log(res.data[0].account_balance);
     })
   }
   getAccountInfo();
-
-  // $(document).find('#account').append(`
-  //   `)
-
-
 }
 
 CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia', 'ProfileService', '$cookies'];
