@@ -15,8 +15,8 @@ function ProfileController($cookies, ProfileService, UserService) {
   init();
 
   function init(){
-    getAccountInfo();
     getUser();
+    getAccountInfo();
   }
 
   function showAccountForm(){
