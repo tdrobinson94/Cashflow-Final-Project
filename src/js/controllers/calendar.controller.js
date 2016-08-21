@@ -175,6 +175,7 @@ $('.month-selector').change();
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
+      console.log(res.data[0]);
       // console.log(res.data[0]);
       // let splitArray = res.data[0].created_at.split(' ');
       // let splitDate = splitArray[0].split('-');
