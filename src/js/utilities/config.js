@@ -37,6 +37,11 @@ function config($stateProvider, $urlRouterProvider){
     controller: 'ProfileController as vm'
   })
 
+  .state('root.settings', {
+    url: '/settings',
+    templateUrl: 'templates/settings.tpl.html',
+  })
+
   $urlRouterProvider.otherwise('/home');
 
 

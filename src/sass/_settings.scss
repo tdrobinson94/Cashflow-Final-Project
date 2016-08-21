@@ -1,0 +1,35 @@
+.container{
+  height: 100%;
+  width: 100%;
+  min-height: 285px;
+  position: relative;
+  .settings-header{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 60px;
+    height: 80px;
+    background-color: #00E676;
+    padding: 10px 0px;
+    .settings-button-box{
+      position: absolute;
+      left: 2%;
+      // top: 20px;
+      .back-button{
+        text-decoration: none;
+        color: white;
+        font-size: 35px;
+        transition: color .2s ease-in-out;
+      }
+      .back-button:hover{
+        color: #00b0ff;
+        transition: color .2s ease-in-out;
+      }
+    }
+    .settings{
+      color: white;
+    }
+  }
+}

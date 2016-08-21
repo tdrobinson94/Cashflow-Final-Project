@@ -17,6 +17,8 @@ function CalendarController($scope, $mdDialog, $mdMedia, ProfileService, $cookie
   let month = clock.getMonth();
   let year = clock.getFullYear();
 
+  getAccountInfo();
+
   $scope.status = '  ';
   $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
@@ -176,6 +178,12 @@ $('.month-selector').change();
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
       console.log(res.data[0]);
+      // if (month < 10){
+      //   let m = 0 + `${month + 1}`
+      //   console.log(m);
+      //   let setDate = year + '-' + m + '-' + day
+      // }
+
       // console.log(res.data[0]);
       // let splitArray = res.data[0].created_at.split(' ');
       // let splitDate = splitArray[0].split('-');
@@ -185,7 +193,6 @@ $('.month-selector').change();
       // console.log(res.data[0].account_balance);
     })
   }
-  getAccountInfo();
 }
 
 CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia', 'ProfileService', '$cookies'];
