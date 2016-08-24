@@ -101,10 +101,42 @@ $('.month-selector, .year-selector').on('change', function(event){
          nextMonth = 1;
          currentYear = Number(currentYear) + 1;
        }
-       day.find('.num-date').html(nextMonth + '/' + (dayIndex - monthDays) + '/' + currentYear);
+       if(nextMonth < 10){
+        //  let newDayIndex = (dayIndex - monthDays);
+         let newMonth = '0' + nextMonth
+         if ((dayIndex - monthDays) < 10){
+           let newDayIndex = '0' + (dayIndex - monthDays)
+           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + newDayIndex);
+         } else {
+           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (dayIndex - monthDays));
+         }
+       } else {
+         if ((dayIndex - monthDays) < 10){
+           let newDayIndex = '0' + (dayIndex - monthDays)
+           day.find('.num-date').html(currentYear + '-' + nextMonth + '-' + newDayIndex);
+         } else {
+           day.find('.num-date').html(currentYear + '-' + nextMonth + '-' + (dayIndex - monthDays));
+         }
+       }
      } else {
        day.find('.num').html(dayIndex);
-       day.find('.num-date').html((Number(currentMonth) + 1) + '/' + (dayIndex) + '/' + currentYear);
+       let thisMonth = (Number(currentMonth) + 1);
+       if(thisMonth < 10){
+         let newMonth = '0' + thisMonth
+         if(dayIndex < 10){
+           let newDays = '0' + dayIndex
+           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + newDays)
+         } else{
+           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (dayIndex));
+         }
+       } else {
+         if(dayIndex < 10){
+           let newDays = '0' + dayIndex
+           day.find('.num-date').html(currentYear + '-' + thisMonth + '-' + newDays)
+         } else{
+           day.find('.num-date').html(currentYear + '-' + thisMonth + '-' + (dayIndex));
+         }
+       }
      }
     })
   };
@@ -125,7 +157,12 @@ $('.month-selector, .year-selector').on('change', function(event){
           prevMonth = 12;
           currentYear = Number(currentYear) - 1;
         }
-        day.find('.num-date').html(prevMonth + '/' + (prevDays[dayIndex]) + '/' + currentYear);
+        if(prevMonth < 10){
+          let newMonth = '0' + prevMonth
+          day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (prevDays[dayIndex]));
+        } else {
+          day.find('.num-date').html(currentYear + '-' + prevMonth + '-' + (prevDays[dayIndex]));
+        }
 
         day.find('.num').parent().addClass("dead_month_color");
         day.find('.num').parent().removeClass("day_background_color");
@@ -178,19 +215,15 @@ $('.month-selector').change();
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
       console.log(res.data[0]);
-      // if (month < 10){
-      //   let m = 0 + `${month + 1}`
-      //   console.log(m);
-      //   let setDate = year + '-' + m + '-' + day
+      let splitArray = res.data[0].created_at.split(' ');
+      console.log(splitArray[0]);
+      let inputDate = splitArray[0];
+      console.log($('.num-date').text());
+      // if (inputDate === $('.num-date').html()){
+      //   $(document).find('.beginning_balance').html(`
+      //     <span>${res.data[0].account_balance}</span>
+      //     `)
       // }
-
-      // console.log(res.data[0]);
-      // let splitArray = res.data[0].created_at.split(' ');
-      // let splitDate = splitArray[0].split('-');
-      // let accountDate = splitDate[1].slice(1,9) + '/' + splitDate[2] + '/' + splitDate[0];
-      // vm.accountsDate = accountDate;
-      // console.log(res.data[0].created_at);
-      // console.log(res.data[0].account_balance);
     })
   }
 }
