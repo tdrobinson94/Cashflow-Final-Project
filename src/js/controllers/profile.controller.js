@@ -29,11 +29,14 @@ function ProfileController($cookies, ProfileService, UserService) {
 
   function addAccount(account){
     ProfileService.addAccount(account).then(function(res){
-      console.log(res);
+      console.log(res.status);
       vm.accountForm = false;
       getAccountInfo();
       // console.log(getAccountInfo());
       vm.account = {};
+      if (res.status === 204){
+        alert("You can only have one account setup at a time!")
+      }
 
     })
   }
@@ -41,7 +44,6 @@ function ProfileController($cookies, ProfileService, UserService) {
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
-      console.log(res);
       vm.accounts = res.data.reverse();
     })
   }
