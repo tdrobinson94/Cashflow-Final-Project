@@ -1,8 +1,9 @@
 import { ExpenseController } from './expense.controller.js';
 import { IncomeController } from './income.controller.js';
-function DayViewController ($scope, $mdDialog, date, $mdMedia){
+function DayViewController ($scope, $mdDialog, date, $mdMedia, begin){
 
   $scope.date = date;
+  $scope.begin = begin;
 
 
   $scope.hide = function() {
@@ -57,6 +58,6 @@ function DayViewController ($scope, $mdDialog, date, $mdMedia){
 
 }
 
-DayViewController.$inject = ['$scope', '$mdDialog', 'date', '$mdMedia'];
+DayViewController.$inject = ['$scope', '$mdDialog', 'date', '$mdMedia', 'begin'];
 
 export { DayViewController };

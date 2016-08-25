@@ -11,7 +11,8 @@ function CalendarController($scope, $mdDialog, $mdMedia, ProfileService, $cookie
   vm.next = next;
   vm.prev = prev;
   vm.current = current;
-  vm.accounts = []
+  vm.accounts = [];
+  vm.accountData = [];
 
   let clock = new Date();
   let month = clock.getMonth();
@@ -30,7 +31,8 @@ function CalendarController($scope, $mdDialog, $mdMedia, ProfileService, $cookie
       parent: angular.element(document.body),
       targetEvent: ev,
       locals: {
-        date: $(ev.target).find(".num-date").text()
+        date: $(ev.target).find(".num-date").text(),
+        begin: $(ev.target).find('.beginning_balance').text()
       },
       clickOutsideToClose: true,
       fullscreen: useFullScreen
@@ -102,7 +104,6 @@ $('.month-selector, .year-selector').on('change', function(event){
          currentYear = Number(currentYear) + 1;
        }
        if(nextMonth < 10){
-        //  let newDayIndex = (dayIndex - monthDays);
          let newMonth = '0' + nextMonth
          if ((dayIndex - monthDays) < 10){
            let newDayIndex = '0' + (dayIndex - monthDays)
@@ -160,6 +161,7 @@ $('.month-selector, .year-selector').on('change', function(event){
         if(prevMonth < 10){
           let newMonth = '0' + prevMonth
           day.find('.num-date').html(currentYear + '-' + newMonth + '-' + (prevDays[dayIndex]));
+          // day.find('.num-box').data(currentYear + '-' + newMonth + '-' + (prevDays[dayIndex]));
         } else {
           day.find('.num-date').html(currentYear + '-' + prevMonth + '-' + (prevDays[dayIndex]));
         }
@@ -175,6 +177,10 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
+
+if(clock.getDate() > 20){
+  $('body').animate({scrollTop: '500px'}, 250);
+}
 //Needs to be refactored
 $('.month-selector').change();
 
@@ -216,14 +222,14 @@ $('.month-selector').change();
     ProfileService.getAccountInfo(user_id).then(function(res){
       console.log(res.data[0]);
       let splitArray = res.data[0].created_at.split(' ');
-      console.log(splitArray[0]);
       let inputDate = splitArray[0];
-      console.log($('.num-date').text());
-      // if (inputDate === $('.num-date').html()){
-      //   $(document).find('.beginning_balance').html(`
-      //     <span>${res.data[0].account_balance}</span>
-      //     `)
-      // }
+      console.log(inputDate);
+      console.log($('.num-date'));
+      vm.accountBalance = '$' + res.data[0].account_balance;
+      if(inputDate === $('.num-date').html()){
+        // vm.accountBalance = '$' + res.data[0].account_balance;
+
+      }
     })
   }
 }
