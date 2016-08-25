@@ -32,7 +32,8 @@ function CalendarController($scope, $mdDialog, $mdMedia, ProfileService, $cookie
       targetEvent: ev,
       locals: {
         date: $(ev.target).find(".num-date").text(),
-        begin: $(ev.target).find('.beginning_balance').text()
+        begin: $(ev.target).find('.beginning_balance').text(),
+        end: $(ev.target).find('.ending_balance').text()
       },
       clickOutsideToClose: true,
       fullscreen: useFullScreen
@@ -250,10 +251,10 @@ $('.month-selector').change();
       console.log(inputDate);
       console.log($('.num-date'));
       vm.accountBalance = '$' + res.data[0].account_balance;
-      if(inputDate === $('.num-date').html()){
-        // vm.accountBalance = '$' + res.data[0].account_balance;
-
-      }
+      // if(inputDate === $('.num-date').html()){
+      //   // vm.accountBalance = '$' + res.data[0].account_balance;
+      //
+      // }
     })
   }
 }

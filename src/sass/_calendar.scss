@@ -172,6 +172,20 @@ body{
             color: white;
           }
         }
+        .beginning_balance{
+          color: white;
+          font-size: 11px;
+          position: absolute;
+          top: 5px;
+          left: 2px;
+        }
+        .ending_balance{
+          color: white;
+          font-size: 11px;
+          position: absolute;
+          bottom: 5px;
+          left: 2px;
+        }
         .num-date{
           display: none;
         }

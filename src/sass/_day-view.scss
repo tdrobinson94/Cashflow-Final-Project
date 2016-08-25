@@ -27,10 +27,19 @@
 
     }
     md-dialog-content{
-
+      
       .md-dialog-content{
-        .content-box{
 
+        .content-box{
+          text-align: left;
+          .beginning_balance{
+            // position: absolute;
+            // top: 1%;
+          }
+          .ending_balance{
+            // position: absolute;
+            // bottom: 1%;
+          }
         }
       }
     }
