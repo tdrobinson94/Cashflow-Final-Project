@@ -179,7 +179,7 @@ $('.month-selector, .year-selector').on('change', function(event){
 })
 
 if(clock.getDate() > 20 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-  $('body').animate({scrollTop: '300px'}, 250);
+  $('body').animate({scrollTop: '250px'}, 250);
 }
 //Needs to be refactored
 $('.month-selector').change();
@@ -197,7 +197,7 @@ $('.month-selector').change();
       }
     }
     if(clock.getDate() > 20 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '300px'}, 250);
+      $('body').animate({scrollTop: '250px'}, 250);
     }
   }
 
@@ -205,7 +205,7 @@ $('.month-selector').change();
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
     if(clock.getDate() > 20 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '300px'}, 250);
+      $('body').animate({scrollTop: '250px'}, 250);
     }
   }
 
@@ -222,7 +222,7 @@ $('.month-selector').change();
       }
     }
     if(clock.getDate() > 20 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '300px'}, 250);
+      $('body').animate({scrollTop: '250px'}, 250);
     }
   }
 
