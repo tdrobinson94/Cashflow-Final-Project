@@ -140,6 +140,7 @@ $('.month-selector, .year-selector').on('change', function(event){
          }
        }
      }
+    //  console.log($('.num-date').html());
     })
   };
   function renderPrevMonthDays(){
@@ -250,11 +251,8 @@ $('.month-selector').change();
       let inputDate = splitArray[0];
       console.log(inputDate);
       console.log($('.num-date'));
+      console.log($('.num-date').html());
       vm.accountBalance = '$' + res.data[0].account_balance;
-      // if(inputDate === $('.num-date').html()){
-      //   // vm.accountBalance = '$' + res.data[0].account_balance;
-      //
-      // }
     })
   }
 }
