@@ -1,6 +1,6 @@
 <div class="contact-header">
   <div class="calendar-button-box">
-    <a class="calendar-button" href="/#/calendar">See Forecast &#8594;</a>
+    <!-- <a class="calendar-button" href="/#/calendar">See Forecast &#8594;</a> -->
   </div>
   <!-- <img src="./images/default-contact.png" /> -->
   <h2 class="greeting">Hey, {{ vm.userInfo.firstname }}</h2>
@@ -37,7 +37,7 @@
       </div>
   </div>
   <div class="account_display_box">
-    <h1 class="accounts-title">All Accounts</h1>
+    <h1 class="accounts-title">Accounts</h1>
     <div class="account_display" ng-repeat="account in vm.accounts | limitTo: 5: 0">
       <div class="edit-box">
         <!-- <button class="edit button fontawesome-pencil"></button> -->
@@ -47,6 +47,7 @@
       <span>Bank: {{ account.bank || 'Bank name' }}</span><br />
       <span>Account Type: {{ account.account_type || 'Account Type' }}</span><br />
       <span class="balance">{{ account.account_balance || 'Account Balance'}}</span>
+      <a class="account-calendar-button" href="/#/calendar"><button>See Account Forecast &#8594</button></a>
       <!-- <span>{{ account.created_at || Date Entered }}</span> -->
     </div>
   </div>

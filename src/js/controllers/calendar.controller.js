@@ -179,11 +179,11 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
-if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
+if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
   $('body').animate({scrollTop: '125px'}, 250);
-} else if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+} else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
   $('body').animate({scrollTop: '200px'}, 250);
-} else if(clock.getDate() > 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+} else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
   $('body').animate({scrollTop: '350px'}, 250);
 }
 //Needs to be refactored
@@ -201,11 +201,11 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
       }
     }
-    if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
+    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
       $('body').animate({scrollTop: '125px'}, 250);
-    } else if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+    } else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '200px'}, 250);
-    } else if(clock.getDate() > 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+    } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '350px'}, 250);
     }
   }
@@ -213,11 +213,11 @@ $('.month-selector').change();
   function current(){
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
-    if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
+    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
       $('body').animate({scrollTop: '125px'}, 250);
-    } else if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+    } else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '200px'}, 250);
-    } else if(clock.getDate() > 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+    } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '350px'}, 250);
     }
   }
@@ -234,11 +234,11 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
-    if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 450){
+    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 450){
       $('body').animate({scrollTop: '125px'}, 250);
-    } else if(clock.getDate() > 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+    } else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '200px'}, 250);
-    } else if(clock.getDate() > 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
+    } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '350px'}, 250);
     }
   }
@@ -252,7 +252,9 @@ $('.month-selector').change();
       console.log(inputDate);
       console.log($('.num-date'));
       console.log($('.num-date').html());
-      vm.accountBalance = '$' + res.data[0].account_balance;
+      if (inputDate === '2016-08-25'){
+        vm.accountBalance = '$' + res.data[0].account_balance;
+      }
     })
   }
 }

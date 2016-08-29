@@ -32,19 +32,21 @@ function ProfileController($cookies, ProfileService, UserService) {
       console.log(res.status);
       vm.accountForm = false;
       getAccountInfo();
-      // console.log(getAccountInfo());
       vm.account = {};
       if (res.status === 204){
         alert("You can only have one account setup at a time!")
       }
-
     })
   }
 
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
+      // console.log(res.status);
       vm.accounts = res.data.reverse();
+      if (res.status === 200){
+        $('body').animate({scrollTop: '200px'}, 250);
+      }
     })
   }
 

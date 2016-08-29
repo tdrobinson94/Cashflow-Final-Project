@@ -207,6 +207,26 @@ body{
         .balance{
           display: none;
         }
+        .account-calendar-button{
+          margin-top: 10px;
+          text-decoration: none;
+          button{
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            // width: 100px;
+            border-radius: 3px;
+            background: #00B0FF;
+            color: white;
+            transition: background .2s ease-in-out;
+          }
+          button:hover{
+            background: #00E676;
+            transition: background .2s ease-in-out;
+          }
+        }
       }
       .account_display:hover{
         .edit-box{
