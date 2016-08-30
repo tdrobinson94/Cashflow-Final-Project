@@ -3,6 +3,7 @@ import $ from 'jquery';
 function SignUpController($http, SERVER, $state, UserService) {
   let vm = this;
   vm.signup = signup;
+  vm.loadingIndicator = false;
 
   function signup(user){
     UserService.signup(user).then(function(res){
@@ -10,6 +11,7 @@ function SignUpController($http, SERVER, $state, UserService) {
       // Refactor this code using try and catch
       if (res.status === 201){
         $state.go('root.log-in');
+        vm.loadingIndicator = true;
       }else {
         alert('Email or Username has been taken by someone else')
       }
