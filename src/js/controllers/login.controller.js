@@ -2,6 +2,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
 
   let vm = this;
   vm.login = login;
+  vm.loadingIndicator = false;
 
   function login(user){
     UserService.login(user).then(function(res){
@@ -10,6 +11,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
       $cookies.put('user_id', res.data.id)
       $state.go('root.profile');
     })
+    vm.loadingIndicator = true;
   }
 
 }

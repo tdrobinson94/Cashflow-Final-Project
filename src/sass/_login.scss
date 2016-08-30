@@ -97,6 +97,13 @@ body{
         background-color: #00E676;
         transition: background-color .2s ease-in-out;
       }
+      .loading_spinner{
+        margin: 0px;
+        img{
+          height: 50px;
+          width: 50px;
+        }
+      }
     }
   }
 }
