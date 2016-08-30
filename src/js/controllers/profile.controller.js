@@ -11,6 +11,7 @@ function ProfileController($cookies, ProfileService, UserService) {
   vm.getUser = getUser;
   vm.accounts = [];
   vm.userInfo = {};
+  vm.exampleForm = true;
 
   init();
 
@@ -46,6 +47,9 @@ function ProfileController($cookies, ProfileService, UserService) {
       vm.accounts = res.data.reverse();
       if (res.data.length === 1){
         $('body').animate({scrollTop: '200px'}, 250);
+        vm.exampleForm = false;
+      } else {
+        vm.exampleForm = true;
       }
     })
   }
@@ -56,6 +60,7 @@ function ProfileController($cookies, ProfileService, UserService) {
         return account.id !== account_id;
       });
     })
+    vm.exampleForm = true;
   }
 
   function getUser(){

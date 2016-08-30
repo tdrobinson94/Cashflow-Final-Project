@@ -257,6 +257,7 @@ $('.month-selector').change();
       }
     })
   }
+
 }
 
 CalendarController.$inject = ['$scope', '$mdDialog', '$mdMedia', 'ProfileService', '$cookies'];

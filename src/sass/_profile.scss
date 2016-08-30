@@ -235,6 +235,46 @@ body{
           transition: dipslay .2s ease-in-out;
         }
       }
+      .example-card{
+        position: relative;
+        width: 60%;
+        border: 1px solid lightgray;
+        padding: 40px 20px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 10px lightgray;
+        margin: 20px;
+        .help-text{
+          color: #00B0FF;
+        }
+        .example-bank{
+          width: 90%;
+          border-bottom: 1px solid lightgray;
+          padding: 5px;
+          margin: 15px;
+        }
+        .example-type{
+          width: 90%;
+          border-bottom: 1px solid lightgray;
+          padding: 5px;
+          margin: 15px;
+        }
+        .account-calendar-button{
+          margin-top: 10px;
+          text-decoration: none;
+          button{
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            // width: 100px;
+            border-radius: 3px;
+            background: #00B0FF;
+            color: white;
+            transition: background .2s ease-in-out;
+          }
+        }
+      }
     }
   }
 }

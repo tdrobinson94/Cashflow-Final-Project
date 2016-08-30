@@ -38,7 +38,7 @@
   </div>
   <div class="account_display_box">
     <h1 class="accounts-title">Accounts</h1>
-    <div class="account_display" ng-repeat="account in vm.accounts | limitTo: 5: 0">
+    <div class="account_display" ng-repeat="account in vm.accounts">
       <div class="edit-box">
         <!-- <button class="edit button fontawesome-pencil"></button> -->
         <button class="delete button fontawesome-trash" ng-click="vm.deleteAccount(account.id)"></button>
@@ -49,6 +49,15 @@
       <span class="balance">{{ account.account_balance || 'Account Balance'}}</span>
       <a class="account-calendar-button" href="/#/calendar"><button>See Account Forecast &#8594</button></a>
       <!-- <span>{{ account.created_at || Date Entered }}</span> -->
+    </div>
+    <div class="example-card" ng-show="vm.exampleForm">
+      <div class="help-text">
+        &#8679; Click Set-up Account Info button, if you haven't set up an account! &#8679;
+      </div>
+      <h3 class="example-title">Account Name</h3>
+      <span class="example-bank">Bank Name</span><br />
+      <span class="example-type">Account Type</span>
+      <a class="account-calendar-button"><button>See Account Forecast &#8594</button></a>
     </div>
   </div>
 
