@@ -42,9 +42,9 @@ function ProfileController($cookies, ProfileService, UserService) {
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
     ProfileService.getAccountInfo(user_id).then(function(res){
-      // console.log(res.status);
+      console.log(res.data);
       vm.accounts = res.data.reverse();
-      if (res.data != {}){
+      if (res.data.length === 1){
         $('body').animate({scrollTop: '200px'}, 250);
       }
     })
