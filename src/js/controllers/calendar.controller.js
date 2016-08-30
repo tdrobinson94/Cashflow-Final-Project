@@ -180,11 +180,11 @@ $('.month-selector, .year-selector').on('change', function(event){
 
 })
 if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-  $('body').animate({scrollTop: '125px'}, 250);
-} else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-  $('body').animate({scrollTop: '200px'}, 250);
+  $('body').animate({scrollTop: '0px'}, 250);
 } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-  $('body').animate({scrollTop: '350px'}, 250);
+  $('body').animate({scrollTop: '400px'}, 250);
+} else {
+  $('body').animate({scrollTop: '0px'}, 250)
 }
 //Needs to be refactored
 $('.month-selector').change();
@@ -202,11 +202,11 @@ $('.month-selector').change();
       }
     }
     if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '125px'}, 250);
-    } else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '200px'}, 250);
+      $('body').animate({scrollTop: '0px'}, 250);
     } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '350px'}, 250);
+      $('body').animate({scrollTop: '400px'}, 250);
+    } else {
+      $('body').animate({scrollTop: '0px'}, 250)
     }
   }
 
@@ -214,11 +214,11 @@ $('.month-selector').change();
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
     if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '125px'}, 250);
-    } else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '200px'}, 250);
+      $('body').animate({scrollTop: '0px'}, 250);
     } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '350px'}, 250);
+      $('body').animate({scrollTop: '400px'}, 250);
+    } else {
+      $('body').animate({scrollTop: '0px'}, 250)
     }
   }
 
@@ -234,12 +234,12 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
-    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 450){
-      $('body').animate({scrollTop: '125px'}, 250);
-    } else if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '200px'}, 250);
+    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
+      $('body').animate({scrollTop: '0px'}, 250);
     } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '350px'}, 250);
+      $('body').animate({scrollTop: '400px'}, 250);
+    } else {
+      $('body').animate({scrollTop: '0px'}, 250)
     }
   }
 
