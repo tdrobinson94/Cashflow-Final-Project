@@ -45,7 +45,7 @@ body{
       color: white;
       border: none;
       text-decoration: none;
-      outline: none;
+      // outline: none;
     }
     .settings-button:hover{
       color: #00b0ff;
@@ -90,7 +90,7 @@ body{
           .cancel{
             background: red;
             border: none;
-            outline: none;
+            // outline: none;
             border-radius: 3px;
             padding: 5 10px;
             color: white;
@@ -188,7 +188,7 @@ body{
             border-radius: 3px;
             color: white;
             background: red;
-            outline: none;
+            // outline: none;
             padding: 5px 10px;
             transition: opacity .2s ease-in-out;
             margin: 5px;
@@ -212,7 +212,7 @@ body{
           text-decoration: none;
           button{
             border: none;
-            outline: none;
+            // outline: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -263,7 +263,7 @@ body{
           text-decoration: none;
           button{
             border: none;
-            outline: none;
+            // outline: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;

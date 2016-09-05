@@ -254,7 +254,7 @@ $('.month-selector').change();
       let splitArray = res.data[0].created_at.split(' ');
       let inputDate = splitArray[0];
       console.log(inputDate);
-      console.log($('.num-date').html());
+      console.log($('.num-date'));
     })
   }
 

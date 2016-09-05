@@ -13,7 +13,7 @@
         .close{
           border: none;
           border-radius: 3px;
-          outline: none;
+          // outline: none;
           color: white;
           background: transparent;
           transition: color .2s ease-in-out;
@@ -27,7 +27,7 @@
 
     }
     md-dialog-content{
-      
+
       .md-dialog-content{
 
         .content-box{
@@ -54,7 +54,7 @@
         background: transparent;
         background: #00E676;
         color: white;
-        outline: none;
+        // outline: none;
         font-size: 20px;
         transition: opacity .2s ease-in-out;
       }
@@ -67,7 +67,7 @@
         background: transparent;
         background: #F44336;
         color: white;
-        outline: none;
+        // outline: none;
         font-size: 20px;
         transition: opacity .2s ease-in-out;
       }
