@@ -180,7 +180,7 @@ $('.month-selector, .year-selector').on('change', function(event){
 
 })
 if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-  $('body').animate({scrollTop: '0px'}, 250);
+  $('body').animate({scrollTop: '100px'}, 250);
 } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
   $('body').animate({scrollTop: '400px'}, 250);
 } else {
@@ -202,7 +202,7 @@ $('.month-selector').change();
       }
     }
     if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '0px'}, 250);
+      $('body').animate({scrollTop: '100px'}, 250);
     } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '400px'}, 250);
     } else {
@@ -214,7 +214,7 @@ $('.month-selector').change();
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
     if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '0px'}, 250);
+      $('body').animate({scrollTop: '100px'}, 250);
     } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '400px'}, 250);
     } else {
@@ -235,7 +235,7 @@ $('.month-selector').change();
       }
     }
     if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '0px'}, 250);
+      $('body').animate({scrollTop: '100px'}, 250);
     } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
       $('body').animate({scrollTop: '400px'}, 250);
     } else {
@@ -252,9 +252,6 @@ $('.month-selector').change();
       console.log(inputDate);
       console.log($('.num-date'));
       console.log($('.num-date').html());
-      if (inputDate === '2016-08-25'){
-        vm.accountBalance = '$' + res.data[0].account_balance;
-      }
     })
   }
 

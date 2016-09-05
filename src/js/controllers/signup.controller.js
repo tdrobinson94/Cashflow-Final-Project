@@ -6,12 +6,12 @@ function SignUpController($http, SERVER, $state, UserService) {
   vm.loadingIndicator = false;
 
   function signup(user){
+    vm.loadingIndicator = true;
     UserService.signup(user).then(function(res){
       console.log(res);
       // Refactor this code using try and catch
       if (res.status === 201){
         $state.go('root.log-in');
-        vm.loadingIndicator = true;
       }else {
         alert('Email or Username has been taken by someone else')
       }
