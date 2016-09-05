@@ -28,7 +28,7 @@ function LayoutController(UserService, $state, $rootScope){
   init();
 
   function setNavigation () {
-    if ($(window).width() < 450) {
+    if ($(window).width() <= 450) {
       $('.links').hide();
     } else {
       $('.links').show();
@@ -44,7 +44,7 @@ function LayoutController(UserService, $state, $rootScope){
 
   function linksHandler() {
     $(".navbar a").on("click", () => {
-      if ($(window).width() < 450) {
+      if ($(window).width() <= 450) {
         $(".hamburger").removeClass("is-active")
         $('.links').slideToggle();
       }

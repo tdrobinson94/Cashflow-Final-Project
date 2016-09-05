@@ -23,10 +23,18 @@ function ProfileController($cookies, ProfileService, UserService) {
   function showAccountForm(){
     vm.accountForm = true;
     $('body').animate({scrollTop: '180px'}, 250);
+
+    if($(window).width() <= 600){
+      $('body').animate({scrollTop: '165px'}, 250);
+    }
   }
 
   function hideAccountForm(){
     vm.accountForm = false;
+    $('body').animate({scrollTop: '100px'}, 250);
+    if($(window).width() <= 600){
+      $('body').animate({scrollTop: '80px'}, 250);
+    }
   }
 
   function addAccount(account){
