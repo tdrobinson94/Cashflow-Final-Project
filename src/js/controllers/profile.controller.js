@@ -56,6 +56,9 @@ function ProfileController($cookies, ProfileService, UserService) {
       vm.accounts = res.data.reverse();
       if (res.data.length === 1){
         $('body').animate({scrollTop: '200px'}, 250);
+        if($(window).height() <= 450){
+          $('body').animate({scrollTop: '270px'}, 250);
+        }
         vm.exampleForm = false;
       } else {
         vm.exampleForm = true;
