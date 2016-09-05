@@ -22,6 +22,7 @@ function ProfileController($cookies, ProfileService, UserService) {
 
   function showAccountForm(){
     vm.accountForm = true;
+    $('body').animate({scrollTop: '180px'}, 250);
   }
 
   function hideAccountForm(){
