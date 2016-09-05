@@ -179,6 +179,10 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
+// Trying to scroll to specific day.
+// if ($('.num-container').hasClass('day_background_color')){
+//   $('body').animate({scrollTop: '200px'}, 250);
+// }
 if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
   $('body').animate({scrollTop: '100px'}, 250);
 } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
