@@ -12,8 +12,9 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
         $cookies.put('access_token', res.data.access_token);
         $cookies.put('user_id', res.data.id)
         $state.go('root.profile');
-      } else {
-        alert('Username or Password is incorrect!')
+      } else if (res.status === 204) {
+        alert('Username or Password is incorrect! Try Again.')
+        vm.loadingIndicator = false;
       }
     })
   }
