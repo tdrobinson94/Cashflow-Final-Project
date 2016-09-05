@@ -57,7 +57,7 @@ function ProfileController($cookies, ProfileService, UserService) {
       if (res.data.length === 1){
         $('body').animate({scrollTop: '200px'}, 250);
         if($(window).height() <= 450){
-          $('body').animate({scrollTop: '270px'}, 250);
+          $('body').animate({scrollTop: '280px'}, 250);
         }
         vm.exampleForm = false;
       } else {
@@ -73,6 +73,10 @@ function ProfileController($cookies, ProfileService, UserService) {
       });
     })
     vm.exampleForm = true;
+    $('body').animate({scrollTop: '100px'}, 250);
+    if($(window).width() <= 600){
+      $('body').animate({scrollTop: '80px'}, 250);
+    }
   }
 
   function getUser(){
