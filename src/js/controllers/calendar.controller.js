@@ -179,17 +179,8 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
-// Trying to scroll to specific day.
-// if ($('.num-container').hasClass('day_background_color')){
-//   $('body').animate({scrollTop: '200px'}, 250);
-// }
-if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-  $('body').animate({scrollTop: '100px'}, 250);
-} else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-  $('body').animate({scrollTop: '400px'}, 250);
-} else {
-  $('body').animate({scrollTop: '0px'}, 250)
-}
+// TODO: write a function that scrolls to the current day
+
 //Needs to be refactored
 $('.month-selector').change();
 
@@ -205,25 +196,11 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
       }
     }
-    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '100px'}, 250);
-    } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '400px'}, 250);
-    } else {
-      $('body').animate({scrollTop: '0px'}, 250)
-    }
   }
 
   function current(){
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
-    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '100px'}, 250);
-    } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '400px'}, 250);
-    } else {
-      $('body').animate({scrollTop: '0px'}, 250)
-    }
   }
 
   function next(){
@@ -238,13 +215,6 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
-    if(clock.getDate() >= 15 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val() && $(window).width() < 350){
-      $('body').animate({scrollTop: '100px'}, 250);
-    } else if(clock.getDate() >= 29 && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()){
-      $('body').animate({scrollTop: '400px'}, 250);
-    } else {
-      $('body').animate({scrollTop: '0px'}, 250)
-    }
   }
 
   function getAccountInfo(){
@@ -254,7 +224,7 @@ $('.month-selector').change();
       let splitArray = res.data[0].created_at.split(' ');
       let inputDate = splitArray[0];
       console.log(inputDate);
-      console.log($('.num-date'));
+      console.log($('.num-box')[7]);
     })
   }
 
