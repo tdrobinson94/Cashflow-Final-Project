@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 function LoginController($http, $state, SERVER, $cookies, UserService){
 
   let vm = this;
@@ -13,7 +15,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
         $cookies.put('user_id', res.data.id)
         $state.go('root.profile');
       } else if (res.status === 204) {
-        alert('Username or Password is incorrect! Try Again.')
+        $('.incorrectInput').html(`<span class="alert">Username or Password is incorrect! Try again, Please!</span>`)
         vm.loadingIndicator = false;
       }
       vm.user = {};

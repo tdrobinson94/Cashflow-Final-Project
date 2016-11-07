@@ -14,7 +14,8 @@ function SignUpController($http, SERVER, $state, UserService) {
       if (res.status === 201){
         $state.go('root.log-in');
       }else {
-        alert('Email or Username has been taken by someone else')
+        $('.incorrectInput').html(`<span class="alert">Email or Username has been taken by someone else</span>`)
+        vm.loadingIndicator = false;
       }
     })
   }
