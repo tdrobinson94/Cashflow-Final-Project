@@ -16,6 +16,7 @@ function LoginController($http, $state, SERVER, $cookies, UserService){
         alert('Username or Password is incorrect! Try Again.')
         vm.loadingIndicator = false;
       }
+      vm.user = {};
     })
   }
 
