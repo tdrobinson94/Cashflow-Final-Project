@@ -54,7 +54,7 @@ body{
       a{
         color: white;
         text-decoration: none;
-        transition: color .2s ease-in-out;
+        transition: all .2s ease-in-out;
         margin: 15px;
         font-size: 15px;
         .navbar-button{
@@ -84,8 +84,16 @@ body{
     }
     a:hover{
       color: #00B0FF;
-      transition: color .2s ease-in-out;
-      // text-decoration: underline;
+      font-size: 20px;
+      transition: all .2s ease-in-out;
+    }
+    .logout:hover{
+      color: #F44336;
+      transition: all .2s ease-in-out;
+    }
+    .loginButton:hover{
+      color: #00e676;
+      transition: all .2s ease-in-out;
     }
   }
 }

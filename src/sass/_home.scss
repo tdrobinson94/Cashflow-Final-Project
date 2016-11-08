@@ -58,15 +58,16 @@ body{
         border-radius: 30px;
         padding: 5px 10px;
         font-weight: normal;
-        transition: opacity .2s ease-in-out;
+        transition: all .2s ease-in-out;
         // outline: none;
         background-color: #00B0FF;
         color: white;
         opacity: .9;
       }
       .log-in:hover{
-        opacity: .6;
-        transition: opacity .2s ease-in-out;
+        // opacity: .6;
+        background: #00e676;
+        transition: all .2s ease-in-out;
       }
       span{
         font-size: 18px;

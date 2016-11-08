@@ -9,8 +9,8 @@
     <a href="/#/calendar" ng-show="vm.loggedIn" ng-click="vm.scrollTop()">Calendar</a>
     <a href="/#/profile" ng-show="vm.loggedIn" ng-click="vm.scrollTop()">Account/Profile</a>
     <!-- <a href="" ng-click="vm.scrollTop()">Contact/FAQ</a> -->
-    <a href="" class="login fontawesome-lock" ng-show="vm.loggedIn" ng-click="vm.logOut()"> Log Out</a>
-    <a href="/#/log-in" class="login fontawesome-unlock" ng-hide="vm.loggedIn"> Log In</a>
+    <a href="" class="login fontawesome-lock logout" ng-show="vm.loggedIn" ng-click="vm.logOut()"> Log Out</a>
+    <a href="/#/log-in" class="login fontawesome-unlock loginButton" ng-hide="vm.loggedIn"> Log In</a>
     <a href="/#/sign-up" ng-hide="vm.loggedIn"><button class="sign-up-navbar navbar-button">Sign Up</button></a>
   </div>
 </nav>
