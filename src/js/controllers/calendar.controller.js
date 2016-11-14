@@ -142,6 +142,11 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
     //  console.log($('.num-date').html());
     })
+    if($('.num-container').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
   };
   function renderPrevMonthDays(){
     MONTHS[1].days = Number($(document).find('#year').val()) % 4 == 0 ? 29 : 28
@@ -179,7 +184,6 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
-// TODO: write a function that scrolls to the current day
 
 //Needs to be refactored
 $('.month-selector').change();
@@ -196,7 +200,11 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
       }
     }
-    $('body').animate({scrollTop: '0px'}, 250);
+    if($('.num-container').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
   }
 
   function current(){
@@ -217,7 +225,11 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
-    $('body').animate({scrollTop: '0px'}, 250);
+    if($('.num-container').hasClass('day_background_color') === true){
+      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
   }
 
   $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
