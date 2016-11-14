@@ -6,7 +6,7 @@
   </button>
   <div class="links">
     <a href="/#/home" ng-hide="vm.loggedIn">Home</a>
-    <a href="/#/calendar" ng-show="vm.loggedIn" ng-click="vm.scrollTop()">Calendar</a>
+    <a class="calendar_link" href="/#/calendar" ng-show="vm.loggedIn" ng-click="vm.scrollTop()">Calendar</a>
     <a href="/#/profile" ng-show="vm.loggedIn" ng-click="vm.scrollTop()">Account/Profile</a>
     <!-- <a href="" ng-click="vm.scrollTop()">Contact/FAQ</a> -->
     <a href="" class="login fontawesome-lock logout" ng-show="vm.loggedIn" ng-click="vm.logOut()"> Log Out</a>

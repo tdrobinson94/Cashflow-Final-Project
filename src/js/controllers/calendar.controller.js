@@ -196,11 +196,13 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) - 1).change();
       }
     }
+    $('body').animate({scrollTop: '0px'}, 250);
   }
 
   function current(){
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
+    $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
   }
 
   function next(){
@@ -215,7 +217,10 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
+    $('body').animate({scrollTop: '0px'}, 250);
   }
+
+  $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
 
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
@@ -224,7 +229,6 @@ $('.month-selector').change();
       let splitArray = res.data[0].created_at.split(' ');
       let inputDate = splitArray[0];
       console.log(inputDate);
-      console.log($('.num-box')[7]);
     })
   }
 
