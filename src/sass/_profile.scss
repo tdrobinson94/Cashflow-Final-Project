@@ -169,20 +169,20 @@ body{
           right: 1%;
           width: 100px;
           transition: display .2s ease-in-out;
-          .edit{
-            border: none;
-            border-radius: 3px;
-            color: white;
-            background: #37474F;
-            outline: none;
-            padding: 5px 10px;
-            transition: opacity .2s ease-in-out;
-            margin: 5px;
-          }
-          .edit:hover{
-            opacity: .5;
-            transition: opacity .2s ease-in-out;
-          }
+          // .edit{
+          //   border: none;
+          //   border-radius: 3px;
+          //   color: white;
+          //   background: #37474F;
+          //   outline: none;
+          //   padding: 5px 10px;
+          //   transition: opacity .2s ease-in-out;
+          //   margin: 5px;
+          // }
+          // .edit:hover{
+          //   opacity: .5;
+          //   transition: opacity .2s ease-in-out;
+          // }
           .delete{
             border: none;
             border-radius: 3px;
