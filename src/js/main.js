@@ -14,7 +14,6 @@ import { CalendarService } from './services/calendar.service';
 import { UserService } from './services/user.service';
 import { ProfileService } from './services/profile.service';
 
-
 // import controllers
 import { CalendarController } from './controllers/calendar.controller';
 import { HomeController } from './controllers/home.controller';

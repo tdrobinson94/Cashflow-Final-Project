@@ -40,7 +40,7 @@ function LayoutController(UserService, $state, $rootScope){
       $('.hamburger').toggleClass('is-active')
       $(".links").slideToggle();
     });
-  };
+  }; 
 
   function linksHandler() {
     $(".navbar a").on("click", () => {
