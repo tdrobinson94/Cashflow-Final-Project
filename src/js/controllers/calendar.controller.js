@@ -80,6 +80,13 @@ $(document).find('#month').html(`
 
     let currentYear = $(document).find('#year').val();
     let currentMonth = $(document).find('#month').val();
+    let autoScroll = function () {
+        if($('.num-container').hasClass('day_background_color') === true){
+          $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+        } else{
+          $('body').animate({scrollTop: '0px'}, 250);
+        }
+    }
 //Needs to be refactored
 // Calendar Code (If dropdown menus change)
 $('.month-selector, .year-selector').on('change', function(event){
@@ -147,11 +154,12 @@ $('.month-selector, .year-selector').on('change', function(event){
      }
     //  console.log($('.num-date').html());
     })
-    if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
-    } else{
-      $('body').animate({scrollTop: '0px'}, 250);
-    }
+    // autoScroll();
+    // if($('.num-container').hasClass('day_background_color') === true){
+    //   $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+    // } else{
+    //   $('body').animate({scrollTop: '0px'}, 250);
+    // }
   };
   function renderPrevMonthDays(){
     MONTHS[1].days = Number(currentYear) % 4 == 0 ? 29 : 28
@@ -185,6 +193,7 @@ $('.month-selector, .year-selector').on('change', function(event){
 
 
   renderMonth();
+  autoScroll();
   renderPrevMonthDays();
 
 })
