@@ -245,7 +245,7 @@ $('.month-selector').change();
     // }
   }
 
-  animateDay
+  //animateDay
 
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
