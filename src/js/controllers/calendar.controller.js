@@ -78,55 +78,6 @@ $(document).find('#month').html(`
     `)
 
 
-    let animateDay = $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
-    //Needs to be refactored
-    $('.month-selector').change();
-
-      function prev(){
-        if(currentYear <= (year - 5)){
-          $(document).find('#year').val(year - 5).change()
-          $(document).find('#month').val(0).change()
-        } else {
-          if($('#month').val() == null || $('#month').val() == 0){
-            $(document).find('#month').val(11).change()
-            $(document).find('#year').val(Number(currentYear) - 1).change()
-          } else {
-            $(document).find('#month').val(Number(currentMonth) - 1).change();
-          }
-        }
-        if($('.num-container').hasClass('day_background_color') === true){
-          animateDay;
-        } else{
-          $('body').animate({scrollTop: '0px'}, 250);
-        }
-      }
-
-      function current(){
-        $(document).find('#month').val(month).change()
-        $(document).find('#year').val(year).change()
-        animateDay
-      }
-
-      function next(){
-        if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
-          $(document).find('#year').val(year + 5).change()
-          $(document).find('#month').val(11).change()
-        } else {
-          if($(document).find('#month').val() == null || $(document).find('#month').val() == 11){
-            $(document).find('#month').val(0).change()
-            $(document).find('#year').val(Number($(document).find('#year').val()) + 1).change()
-          } else {
-            $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
-          }
-        }
-        if($('.num-container').hasClass('day_background_color') === true){
-          animateDay
-        } else{
-          $('body').animate({scrollTop: '0px'}, 250);
-        }
-      }
-
-
     let currentYear = $(document).find('#year').val();
     let currentMonth = $(document).find('#month').val();
 //Needs to be refactored
@@ -237,6 +188,55 @@ $('.month-selector, .year-selector').on('change', function(event){
   renderPrevMonthDays();
 
 })
+
+
+let animateDay = $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+//Needs to be refactored
+$('.month-selector').change();
+
+  function prev(){
+    if(currentYear <= (year - 5)){
+      $(document).find('#year').val(year - 5).change()
+      $(document).find('#month').val(0).change()
+    } else {
+      if($('#month').val() == null || $('#month').val() == 0){
+        $(document).find('#month').val(11).change()
+        $(document).find('#year').val(Number(currentYear) - 1).change()
+      } else {
+        $(document).find('#month').val(Number(currentMonth) - 1).change();
+      }
+    }
+    if($('.num-container').hasClass('day_background_color') === true){
+      animateDay;
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
+  }
+
+  function current(){
+    $(document).find('#month').val(month).change()
+    $(document).find('#year').val(year).change()
+    animateDay
+  }
+
+  function next(){
+    if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
+      $(document).find('#year').val(year + 5).change()
+      $(document).find('#month').val(11).change()
+    } else {
+      if($(document).find('#month').val() == null || $(document).find('#month').val() == 11){
+        $(document).find('#month').val(0).change()
+        $(document).find('#year').val(Number($(document).find('#year').val()) + 1).change()
+      } else {
+        $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
+      }
+    }
+    if($('.num-container').hasClass('day_background_color') === true){
+      animateDay
+    } else{
+      $('body').animate({scrollTop: '0px'}, 250);
+    }
+  }
 
   animateDay
 
