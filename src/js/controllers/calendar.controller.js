@@ -189,6 +189,8 @@ $('.month-selector, .year-selector').on('change', function(event){
 
 })
 
+
+let animateDay = $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
 //Needs to be refactored
 $('.month-selector').change();
 
@@ -205,7 +207,7 @@ $('.month-selector').change();
       }
     }
     if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+      animateDay;
     } else{
       $('body').animate({scrollTop: '0px'}, 250);
     }
@@ -214,7 +216,7 @@ $('.month-selector').change();
   function current(){
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
-    $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+    animateDay
   }
 
   function next(){
@@ -230,13 +232,13 @@ $('.month-selector').change();
       }
     }
     if($('.num-container').hasClass('day_background_color') === true){
-      $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+      animateDay
     } else{
       $('body').animate({scrollTop: '0px'}, 250);
     }
   }
 
-  $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+  animateDay
 
   function getAccountInfo(){
     let user_id = $cookies.get('user_id');
