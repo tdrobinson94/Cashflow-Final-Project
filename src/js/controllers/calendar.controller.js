@@ -194,8 +194,7 @@ let animateDay = $('body').animate({scrollTop: $('.day_background_color').offset
 //Needs to be refactored
 $('.month-selector').change();
 
-  function prev(event){
-     event.preventDefault();
+  function prev(){
     if(currentYear <= (year - 5)){
       $(document).find('#year').val(year - 5).change()
       $(document).find('#month').val(0).change()
@@ -207,21 +206,20 @@ $('.month-selector').change();
         $(document).find('#month').val(Number(currentMonth) - 1).change();
       }
     }
-    if($('.num-container').hasClass('day_background_color') === true){
-      animateDay;
-    } else{
-      $('body').animate({scrollTop: '0px'}, 250);
-    }
+    // if($('.num-container').hasClass('day_background_color') === true){
+    //   animateDay;
+    // } else{
+    //   $('body').animate({scrollTop: '0px'}, 250);
+    // }
   }
 
   function current(){
     $(document).find('#month').val(month).change()
     $(document).find('#year').val(year).change()
-    animateDay
+    // animateDay
   }
 
-  function next(event){
-     event.preventDefault();
+  function next(){
     if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
       $(document).find('#year').val(year + 5).change()
       $(document).find('#month').val(11).change()
@@ -233,11 +231,11 @@ $('.month-selector').change();
         $(document).find('#month').val(Number($(document).find('#month').val()) + 1).change();
       }
     }
-    if($('.num-container').hasClass('day_background_color') === true){
-      animateDay
-    } else{
-      $('body').animate({scrollTop: '0px'}, 250);
-    }
+    // if($('.num-container').hasClass('day_background_color') === true){
+    //   animateDay
+    // } else{
+    //   $('body').animate({scrollTop: '0px'}, 250);
+    // }
   }
 
   animateDay
