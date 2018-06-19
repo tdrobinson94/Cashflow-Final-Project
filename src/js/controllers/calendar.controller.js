@@ -93,6 +93,7 @@ $('.month-selector, .year-selector').on('change', function(event){
   event.preventDefault();
   var num = day.find('.num');
 
+  autoScroll();
 
   let renderMonth = function () {
     MONTHS[1].days = Number($('#year').val()) % 4 == 0 ? 29 : 28;
@@ -193,7 +194,6 @@ $('.month-selector, .year-selector').on('change', function(event){
 
 
   renderMonth();
-  autoScroll();
   renderPrevMonthDays();
 
 })
