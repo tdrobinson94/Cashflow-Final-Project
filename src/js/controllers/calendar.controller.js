@@ -194,7 +194,8 @@ let animateDay = $('body').animate({scrollTop: $('.day_background_color').offset
 //Needs to be refactored
 $('.month-selector').change();
 
-  function prev(){
+  function prev(event){
+     event.preventDefault();
     if(currentYear <= (year - 5)){
       $(document).find('#year').val(year - 5).change()
       $(document).find('#month').val(0).change()
@@ -219,7 +220,8 @@ $('.month-selector').change();
     animateDay
   }
 
-  function next(){
+  function next(event){
+     event.preventDefault();
     if($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11){
       $(document).find('#year').val(year + 5).change()
       $(document).find('#month').val(11).change()
