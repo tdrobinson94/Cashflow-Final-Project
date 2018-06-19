@@ -83,6 +83,7 @@ $(document).find('#month').html(`
     let autoScroll = function () {
         if($('.num-container').hasClass('day_background_color') === true){
           $('body').animate({scrollTop: $('.day_background_color').offset().top - 165}, 250);
+          return;
         } else{
           $('body').animate({scrollTop: '0px'}, 250);
         }
